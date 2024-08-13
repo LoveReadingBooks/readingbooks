@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chapter 21</title>
+  <link rel="icon" type="image/png" href="../icon/favicon-16x16.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="area">
+    <audio id="audio" controls style="width: 95%; display: none;">
+      <source src="https://static.wixstatic.com/mp3/67c6c6_b52bfc2375ba492d8884594b2e8c5749.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-bar-fill" id="progressBarFill"></div>
+    </div>
+    <div id="button">
+      <button class="button" id="playButton" onclick="playAudio()">play</button>
+      <button class="button" onclick="playPause()">pause</button>
+      <button class="button" onclick="prevSentence()">previous</button>
+      <button class="button" onclick="nextSentence()">next</button>
+      <button class="button" onclick="jumpToFirstSentence()">first</button>
+      <button class="button" onclick="jumpToLastSentence()">last</button>
+      <button id="shortcut">Shortcut: "Space": play/pause; ⬅️ ➡️ ⬆️ ⬇️ </button>
+      <a id="home" href="../index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="transcript-container" id="transcript">
+    <p data-start="16.40" data-end="18.64" style="margin-left: 35%;">Chapter 21： The Lion Becomes the King of Beasts</p>
+    <p data-start="16.40" data-end="18.64" style="margin-left: 35%;">第21章：獅子成為獸中之王</p>
+    <p data-start="19.58" data-end="60.44">After climbing down from the china wall the travelers found themselves in a disagreeable country, full of bogs and marshes and covered with tall, rank grass. It was difficult to walk without falling into muddy holes, for the grass was so thick that it hid them from sight. However, by carefully picking their way, they got safely along until they reached solid ground. But here the country seemed wilder than ever, and after a long and tiresome walk through the underbrush they entered another forest, where the trees were bigger and older than any they had ever seen.</p>
+    <p data-start="19.58" data-end="60.44">從瓷牆上爬下來後，旅行者們發現自己來到了一個令人不快的國度，充滿了沼澤和泥潭，覆蓋著高大而濃密的草。他們很難行走而不掉進泥坑裡，因為草太厚，掩蓋了泥坑。然而，他們小心翼翼地走，最終到達了堅固的地面。但這裡的景象比之前更加荒野，經過長時間疲憊的穿越灌木叢後，他們進入了另一片森林，這裡的樹木比他們見過的任何樹都要大、要老。</p>
+    <p data-start="60.72" data-end="67.70">"This forest is perfectly delightful," declared the Lion, looking around him with joy. "Never have I seen a more beautiful place."</p>
+    <p data-start="60.72" data-end="67.70">“這片森林真是太美妙了，”獅子快樂地看著四周，說道。“我從未見過如此美麗的地方。”</p>
+    <p data-start="68.46" data-end="92.80">"It seems gloomy," said the Scarecrow. "Not a bit of it," answered the Lion. "I should like to live here all my life. See how soft the dried leaves are under your feet and how rich and green the moss is that clings to these old trees. Surely no wild beast could wish a pleasanter home." "Perhaps there are wild beasts in the forest now," said Dorothy.</p>
+    <p data-start="68.46" data-end="92.80">“看起來很陰鬱，”稻草人說。“一點也不，”獅子回答道。“我希望能在這裡住一輩子。看看腳下這些柔軟的枯葉，還有這些古老樹木上綠意盎然的苔蘚。毫無疑問，任何野獸都不會希望有比這更舒適的家了。”“也許現在森林裡就有野獸，”桃樂絲說。</p>
+    <p data-start="93.52" data-end="102.36">"I suppose there are," returned the Lion, "but I do not see any of them about." They walked through the forest until it became too dark to go any farther.</p>
+    <p data-start="93.52" data-end="102.36">“我想是有的，”獅子回應道，“但我沒有看到它們。”他們一直走到天黑得不能再走下去。</p>
+    <p data-start="103.34" data-end="133.18">Dorothy and Toto and the Lion lay down to sleep, while the Woodman and the Scarecrow kept watch over them as usual. When morning came, they started again. Before they had gone far they heard a low rumble, as of the growling of many wild animals. Toto whimpered a little, but none of the others was frightened, and they kept along the well-trodden path until they came to an opening in the wood, in which were gathered hundreds of beasts of every variety.</p>
+    <p data-start="103.34" data-end="133.18">桃樂絲、托托和獅子躺下睡覺，而樵夫和稻草人像往常一樣守護著他們。天亮後，他們再次出發。沒走多遠，他們聽到低沉的咆哮聲，像是許多野獸在吼叫。托托有些哀鳴，但其他人都不害怕，沿著踩踏過的小路前行，直到他們來到樹林中的一片空地，這裡聚集了各種各樣的野獸。</p>
+    <p data-start="133.34" data-end="162.86">There were tigers and elephants and bears and wolves and foxes and all the others in the natural history, and for a moment Dorothy was afraid. But the Lion explained that the animals were holding a meeting, and he judged by their snarling and growling that they were in great trouble. As he spoke several of the beasts caught sight of him, and at once the great assemblage hushed as if by magic.</p>
+    <p data-start="133.34" data-end="162.86">有老虎、大象、熊、狼和狐狸，還有其他所有自然界的動物，桃樂絲一時間有些害怕。但獅子解釋說，這些動物在開會，從他們的吼叫聲中判斷，他們遇到了大麻煩。正說著，幾隻野獸看到了獅子，立刻整個會場靜了下來，仿佛被魔法施了咒。</p>
+    <p data-start="162.88" data-end="192.14">The biggest of the tigers came up to the Lion and bowed, saying: "Welcome, O King of Beasts! You have come in good time to fight our enemy and bring peace to all the animals of the forest once more." "What is your trouble?" asked the Lion quietly. "We are all threatened," answered the tiger, "by a fierce enemy which has lately come into this forest.</p>
+    <p data-start="162.88" data-end="192.14">最大的老虎走到獅子面前，鞠躬道：“歡迎，獸中之王！你來得正好，可以打敗我們的敵人，重新給森林裡的所有動物帶來和平。”“你們有什麼麻煩？”獅子平靜地問道。“我們都受到了威脅，”老虎回答，“有一個兇猛的敵人最近來到了這片森林。</p>
+    <p data-start="192.76" data-end="212.42">It is a most tremendous monster, like a great spider, with a body as big as an elephant and legs as long as a tree trunk. It has eight of these long legs, and as the monster crawls through the forest he seizes an animal with a leg and drags it to his mouth, where he eats it as a spider does a fly.</p>
+    <p data-start="192.76" data-end="212.42">它是一個巨大的怪物，像一隻大蜘蛛，身體像大象一樣大，腿像樹幹一樣長。它有八條這樣的長腿，當這個怪物在森林中爬行時，它用腿抓住動物，把它們拖到嘴邊，像蜘蛛吃蒼蠅一樣吃掉它們。</p>
+    <p data-start="213.32" data-end="242.60">Not one of us is safe while this fierce creature is alive, and we had called a meeting to decide how to take care of ourselves when you came among us." The Lion thought for a moment. "Are there any other lions in this forest?" he asked. "No; there were some, but the monster has eaten them all. And, besides, they were none of them nearly so large and brave as you."</p>
+    <p data-start="213.32" data-end="242.60">只要這個兇猛的生物還活著，我們就沒有一個是安全的，所以我們召開了一次會議，決定如何自保，這時你來到了我們中間。”獅子想了一會兒。“這森林裡還有其他獅子嗎？”他問道。“沒有；曾經有一些，但都被怪物吃掉了。而且，他們都沒有你這麼大和勇敢。”</p>
+    <p data-start="242.64" data-end="262.24">"If I put an end to your enemy, will you bow down to me and obey me as King of the Forest?" inquired the Lion. "We will do that gladly," returned the tiger; and all the other beasts roared with a mighty roar: "We will!" "Where is this great spider of yours now?" asked the Lion.</p>
+    <p data-start="242.64" data-end="262.24">“如果我消滅了你們的敵人，你們會向我鞠躬，服從我為森林之王嗎？”獅子問道。“我們會很樂意這樣做，”老虎回答；所有其他的野獸都發出強大的吼聲：“我們會的！”“你們的那個大蜘蛛現在在哪裡？”獅子問。</p>
+    <p data-start="262.98" data-end="291.10">"Yonder, among the oak trees," said the tiger, pointing with his forefoot. "Take good care of these friends of mine," said the Lion, "and I will go at once to fight the monster." He bade his comrades good-bye and marched proudly away to do battle with the enemy. The great spider was lying asleep when the Lion found him, and it looked so ugly that its foe turned up his nose in disgust.</p>
+    <p data-start="262.98" data-end="291.10">“就在那邊的橡樹叢中，”老虎用前爪指著說。“好好照顧我的這些朋友，”獅子說，“我會立即去和那怪物戰鬥。”他向他的同伴告別，驕傲地走去與敵人戰鬥。當獅子找到那隻大蜘蛛時，它正在睡覺，看起來非常醜陋，讓他的敵人皺起了鼻子，感到厭惡。</p>
+    <p data-start="292.08" data-end="340.50">Its legs were quite as long as the tiger had said, and its body covered with coarse black hair. It had a great mouth, with a row of sharp teeth a foot long; but its head was joined to the pudgy body by a neck as slender as a wasp's waist. This gave the Lion a hint of the best way to attack the creature, and as he knew it was easier to fight it asleep than awake, he gave a great spring and landed directly upon the monster's back. Then, with one blow of his heavy paw, all armed with sharp claws, he knocked the spider's head from its body. Jumping down, he watched it until the long legs stopped wiggling, when he knew it was quite dead.</p>
+    <p data-start="292.08" data-end="340.50">它的腿如老虎所說的一樣長，身體覆蓋著粗糙的黑毛。它有一個大嘴巴，一排鋒利的牙齒有一英尺長；但它的頭部通過一個像黃蜂腰一樣纖細的脖子連接到胖乎乎的身體上。這給了獅子一個最佳攻擊方法的提示，因為他知道，打它睡著比醒著容易，他用力一躍，直接跳到怪物的背上。然後，用他鋒利爪子的重重一擊，把蜘蛛的頭從身體上打了下來。跳下來後，他一直看著，直到長腿停止抽搐，這時他知道它已經完全死了。</p>
+    <p data-start="341.68" data-end="346.08">The Lion went back to the opening where the beasts of the forest were waiting for him and said proudly:</p>
+    <p data-start="341.68" data-end="346.08">獅子回到野獸們等著他的空地上，驕傲地說：</p>
+    <p data-start="347.00" data-end="361.48">"You need fear your enemy no longer." Then the beasts bowed down to the Lion as their King, and he promised to come back and rule over them as soon as Dorothy was safely on her way to Kansas.</p>
+    <p data-start="347.00" data-end="361.48">“你們不必再害怕你們的敵人了。”然後野獸們向獅子鞠躬，作為他們的國王，他答應等桃樂絲安全上路回堪薩斯後，就回來統治他們。</p>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
