@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chapter 24</title>
+  <link rel="icon" type="image/png" href="../icon/favicon-16x16.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="area">
+    <audio id="audio" controls style="width: 95%; display: none;">
+      <source src="https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-bar-fill" id="progressBarFill"></div>
+    </div>
+    <div id="button">
+      <button class="button" id="playButton" onclick="playAudio()">play</button>
+      <button class="button" onclick="playPause()">pause</button>
+      <button class="button" onclick="prevSentence()">previous</button>
+      <button class="button" onclick="nextSentence()">next</button>
+      <button class="button" onclick="jumpToFirstSentence()">first</button>
+      <button class="button" onclick="jumpToLastSentence()">last</button>
+      <button id="shortcut">Shortcut: "Space": play/pause; ⬅️ ➡️ ⬆️ ⬇️ </button>
+      <a id="home" href="../index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="transcript-container" id="transcript">
+    <p data-start="16.08" data-end="16.60" style="margin-left: 35%;">Chapter 24: Home Again</p>
+    <p data-start="16.08" data-end="16.60" style="margin-left: 35%;">第24章：再次回家</p>
+    <p data-start="18.44" data-end="25.96">Aunt Em had just come out of the house to water the cabbages when she looked up and saw Dorothy running toward her.</p>
+    <p data-start="18.44" data-end="25.96">艾姆嬸嬸剛從屋裡出來澆捲心菜，這時她抬頭看到桃樂絲向她跑來。</p>
+    <p data-start="27.48" data-end="34.76">"My darling child!" she cried, folding the little girl in her arms and covering her face with kisses.</p>
+    <p data-start="27.48" data-end="34.76">“我親愛的孩子！”她喊道，將小女孩摟在懷裡，滿臉親吻。</p>
+    <p data-start="35.44" data-end="42.46">"Where in the world did you come from?" "From the Land of Oz," said Dorothy gravely.</p>
+    <p data-start="35.44" data-end="42.46">“你從哪裡來的？”“從奧茲國來的，”桃樂絲嚴肅地說。</p>
+    <p data-start="42.56" data-end="47.94">"And here is Toto, too. And oh, Aunt Em! I'm so glad to be at home again!"</p>
+    <p data-start="42.56" data-end="47.94">“托托也在這裡。哦，艾姆嬸嬸！我真高興能再次回家！”</p>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

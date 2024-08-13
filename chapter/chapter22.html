@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chapter 22</title>
+  <link rel="icon" type="image/png" href="../icon/favicon-16x16.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="area">
+    <audio id="audio" controls style="width: 95%; display: none;">
+      <source src="https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-bar-fill" id="progressBarFill"></div>
+    </div>
+    <div id="button">
+      <button class="button" id="playButton" onclick="playAudio()">play</button>
+      <button class="button" onclick="playPause()">pause</button>
+      <button class="button" onclick="prevSentence()">previous</button>
+      <button class="button" onclick="nextSentence()">next</button>
+      <button class="button" onclick="jumpToFirstSentence()">first</button>
+      <button class="button" onclick="jumpToLastSentence()">last</button>
+      <button id="shortcut">Shortcut: "Space": play/pause; ⬅️ ➡️ ⬆️ ⬇️ </button>
+      <a id="home" href="../index.html">Home</a>
+    </div>
+  </div>
+
+  <div class="transcript-container" id="transcript">
+    <p data-start="15.10" data-end="16.94" style="margin-left: 35%;">Chapter 22: The Country of the Quadlings</p>
+    <p data-start="15.10" data-end="16.94" style="margin-left: 35%;">第22章：夸德林國</p>
+    <p data-start="17.96" data-end="28.30">The four travelers passed through the rest of the forest in safety, and when they came out from its gloom saw before them a steep hill, covered from top to bottom with great pieces of rock.</p>
+    <p data-start="17.96" data-end="28.30">四位旅行者安全地穿過了剩下的森林，當他們走出陰暗的森林時，看到面前是一座陡峭的山，從上到下都被大塊的岩石覆蓋著。</p>
+    <p data-start="28.48" data-end="35.08">"That will be a hard climb," said the Scarecrow, "but we must get over the hill, nevertheless."</p>
+    <p data-start="28.48" data-end="35.08">“這將會是一段艱難的攀爬，”稻草人說，“但我們必須翻過這座山。”</p>
+    <p data-start="36.12" data-end="47.32">So he led the way and the others followed. They had nearly reached the first rock when they heard a rough voice cry out, "Keep back!" "Who are you?" asked the Scarecrow.</p>
+    <p data-start="36.12" data-end="47.32">於是他領頭，其他人跟隨。他們剛剛接近第一塊岩石時，聽到一個粗暴的聲音叫道，“退後！”“你是誰？”稻草人問。</p>
+    <p data-start="48.40" data-end="61.44">Then a head showed itself over the rock and the same voice said, "This hill belongs to us, and we don't allow anyone to cross it." "But we must cross it," said the Scarecrow. "We're going to the country of the Quadlings."</p>
+    <p data-start="48.40" data-end="61.44">然後一個腦袋從岩石後面露出來，同樣的聲音說，“這座山是我們的，我們不允許任何人越過它。”“但我們必須越過它，”稻草人說。“我們要去夸德林國。”</p>
+    <p data-start="62.38" data-end="70.08">"But you shall not!" replied the voice, and there stepped from behind the rock the strangest man the travelers had ever seen.</p>
+    <p data-start="62.38" data-end="70.08">“但你們不能！”聲音回答道，然後從岩石後面走出了一個旅行者們見過的最奇怪的人。</p>
+    <p data-start="70.08" data-end="101.04">He was quite short and stout and had a big head, which was flat at the top and supported by a thick neck full of wrinkles. But he had no arms at all, and, seeing this, the Scarecrow did not fear that so helpless a creature could prevent them from climbing the hill. So he said, "I'm sorry not to do as you wish, but we must pass over your hill whether you like it or not," and he walked boldly forward.</p>
+    <p data-start="70.08" data-end="101.04">他很矮胖，有一個大頭，頭頂是平的，脖子又粗又皺。但是他完全沒有手臂，見此情景，稻草人並不害怕這樣一個無助的生物能阻止他們攀登這座山。於是他說：“很抱歉不能如你所願，但我們無論如何都必須越過你的山。”然後他大膽地向前走去。</p>
+    <p data-start="102.80" data-end="126.32">As quick as lightning the man's head shot forward and his neck stretched out until the top of the head, where it was flat, struck the Scarecrow in the middle and sent him tumbling, over and over, down the hill. Almost as quickly as it came the head went back to the body, and the man laughed harshly as he said, "It isn't as easy as you think!"</p>
+    <p data-start="102.80" data-end="126.32">那人的頭像閃電般射出，他的脖子伸長，直到平的頭頂擊中了稻草人的中間，讓他翻滾著滾下山坡。頭幾乎和來時一樣快地回到了身體上，那人粗聲大笑說：“這可沒那麼容易！”</p>
+    <p data-start="127.74" data-end="156.42">A chorus of boisterous laughter came from the other rocks, and Dorothy saw hundreds of the armless Hammer-Heads upon the hillside, one behind every rock. The Lion became quite angry at the laughter caused by the Scarecrow's mishap, and giving a loud roar that echoed like thunder, he dashed up the hill. Again a head shot swiftly out, and the great Lion went rolling down the hill as if he had been struck by a cannon ball.</p>
+    <p data-start="127.74" data-end="156.42">其他岩石後面傳來一陣喧鬧的笑聲，桃樂絲看到山坡上有數百個沒有手臂的錘頭人，每個岩石後面都有一個。獅子對於稻草人的不幸引起的笑聲非常生氣，發出一聲雷鳴般的吼叫，衝上了山坡。又有一個頭迅速射出，巨大的獅子像被炮彈擊中一樣滾下了山坡。</p>
+    <p data-start="156.52" data-end="170.60">Dorothy ran down and helped the Scarecrow to his feet, and the Lion came up to her, feeling rather bruised and sore, and said, "It is useless to fight people with shooting heads; no one can withstand them."</p>
+    <p data-start="156.52" data-end="170.60">桃樂絲跑下去幫稻草人站起來，獅子走到她身邊，感覺很疼痛，說：“和這些射頭的人戰鬥是無用的；沒有人能抵擋他們。”</p>
+    <p data-start="171.40" data-end="180.10">"What can we do, then?" she asked. "Call the Winged Monkeys," suggested the Tin Woodman. "You have still the right to command them once more."</p>
+    <p data-start="171.40" data-end="180.10">“那我們該怎麼辦呢？”她問。“召喚有翼的猴子，”錫樵夫建議道。“你還有一次指揮它們的權利。”</p>
+    <p data-start="181.32" data-end="203.56">"Very well," she answered, and putting on the Golden Cap she uttered the magic words. The Monkeys were as prompt as ever, and in a few moments the entire band stood before her. "What are your commands?" inquired the King of the Monkeys, bowing low. "Carry us over the hill to the country of the Quadlings," answered the girl.</p>
+    <p data-start="181.32" data-end="203.56">“好的，”她回答，戴上金帽子，說出了魔法詞語。猴子們一如既往地迅速，幾分鐘後，整個猴群就站在她面前。“你有什麼命令？”猴王低頭問道。“帶我們飛越這座山到夸德林國，”女孩回答道。</p>
+    <p data-start="204.12" data-end="230.36">"It shall be done," said the King, and at once the Winged Monkeys caught the four travelers and Toto up in their arms and flew away with them. As they passed over the hill the Hammer-Heads yelled with vexation, and shot their heads high in the air, but they could not reach the Winged Monkeys, which carried Dorothy and her comrades safely over the hill and set them down in the beautiful country of the Quadlings.</p>
+    <p data-start="204.12" data-end="230.36">“照辦，”猴王說，然後有翼的猴子立刻抱起四位旅行者和托托飛走了。當他們飛過山時，錘頭人氣得大叫，將頭高高射向空中，但他們無法觸及有翼的猴子，猴子們安全地將桃樂絲和她的夥伴帶過山，放在了美麗的夸德林國。</p>
+    <p data-start="230.54" data-end="239.76">"This is the last time you can summon us," said the leader to Dorothy; "so good-bye and good luck to you."</p>
+    <p data-start="230.54" data-end="239.76">“這是你最後一次可以召喚我們了，”領袖對桃樂絲說；“所以再見，祝你好運。”</p>
+    <p data-start="240.68" data-end="247.82">"Good-bye, and thank you very much," returned the girl; and the Monkeys rose into the air and were out of sight in a twinkling.</p>
+    <p data-start="240.68" data-end="247.82">“再見，非常感謝你們，”女孩回答。猴子們升上空中，瞬間消失不見了。</p>
+    <p data-start="249.64" data-end="286.06">The country of the Quadlings seemed rich and happy. There was field upon field of ripening grain, with well-paved roads running between, and pretty rippling brooks with strong bridges across them. The fences and houses and bridges were all painted bright red, just as they had been painted yellow in the country of the Winkies and blue in the country of the Munchkins. The Quadlings themselves, who were short and fat and looked chubby and good-natured, were dressed all in red, which showed bright against the green grass and the yellowing grain.</p>
+    <p data-start="249.64" data-end="286.06">夸德林國看起來富饒而快樂。這裡有一望無際的成熟莊稼田，鋪設良好的道路穿行其中，小溪清澈流淌，堅固的橋橫跨其上。籬笆、房屋和橋梁都被漆成鮮紅色，就像在溫基國漆成黃色，在芒奇金國漆成藍色一樣。夸德林人本身矮胖，看起來圓潤而友善，他們穿著紅色的衣服，與綠色的草地和黃澄澄的莊稼形成鮮明對比。</p>
+    <p data-start="287.14" data-end="306.42">The Monkeys had set them down near a farmhouse, and the four travelers walked up to it and knocked at the door. It was opened by the farmer's wife, and when Dorothy asked for something to eat the woman gave them all a good dinner, with three kinds of cake and four kinds of cookies, and a bowl of milk for Toto.</p>
+    <p data-start="287.14" data-end="306.42">猴子們把他們放在一個農舍附近，四位旅行者走上前去敲門。農夫的妻子開了門，當桃樂絲要求一些食物時，女人給了他們一頓豐盛的晚餐，有三種蛋糕和四種餅乾，還有一碗牛奶給托托。</p>
+    <p data-start="307.80" data-end="318.92">"How far is it to the Castle of Glinda?" asked the child. "It is not a great way," answered the farmer's wife. "Take the road to the South and you will soon reach it."</p>
+    <p data-start="307.80" data-end="318.92">“到格林達的城堡有多遠？”孩子問。“不太遠，”農夫的妻子回答。“沿著南邊的路走，很快就能到達。”</p>
+    <p data-start="319.24" data-end="342.52">Thanking the good woman, they started afresh and walked by the fields and across the pretty bridges until they saw before them a very beautiful Castle. Before the gates were three young girls, dressed in handsome red uniforms trimmed with gold braid; and as Dorothy approached, one of them said to her: "Why have you come to the South Country?"</p>
+    <p data-start="319.24" data-end="342.52">感謝好心的女人後，他們再次出發，沿著田野走過美麗的橋，直到看到面前一座非常漂亮的城堡。城門前有三個年輕的女孩，穿著飾有金邊的紅色制服；當桃樂絲走近時，其中一個對她說：“你為什麼來到南方國度？”</p>
+    <p data-start="343.68" data-end="347.62">To see the good witch who rules here she answered, will you take me to her?</p>
+    <p data-start="343.68" data-end="347.62">“來見這裡的好女巫，”她回答。“你能帶我去見她嗎？”</p>
+    <p data-start="348.70" data-end="356.04">"To see the Good Witch who rules here," she answered. "Will you take me to her?" "Let me have your name, and I will ask Glinda if she will receive you." They told who they were, and the girl soldier went into the Castle.</p>
+    <p data-start="348.70" data-end="356.04">“來見這裡的好女巫，”她回答。“你能帶我去見她嗎？”“請告訴我你的名字，我會去問格林達是否願意接見你們。”他們告訴了她們自己的名字，女兵走進了城堡。</p>
+    <p data-start="356.70" data-end="363.98">After a few moments she came back to say that Dorothy and the others were to be admitted at once.</p>
+    <p data-start="356.70" data-end="363.98">過了一會兒，她回來說桃樂絲和其他人可以立即進入。</p>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
