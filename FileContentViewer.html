@@ -39,6 +39,9 @@
 
         .all-controls {
             display: flex;
+            
+            position: absolute; /* 使用 absolute 定位 */
+            margin-top: 50px;
         }
 
         .audio-controls button,
@@ -117,14 +120,13 @@
         .hidden-controls {
             display: flex;
             margin-top: 0.5%;
-            position: absolute; /* 使用 absolute 定位 */
-            margin-top: 50px;
         }
 
         .show-controls {
             display: flex;
             margin-top: 0.5%;
             gap: 10px; /* 可以調整按鈕之間的間距 */
+            
             position: absolute; /* 使用 absolute 定位 */
             margin-top: 50px;
         }
@@ -186,6 +188,8 @@
             height: 100%;
             width: 96%;
             max-width: 96%; /* 防止超出螢幕 */
+        
+            margin-top: 2px;
         }
 
         #progressContainer {
@@ -194,13 +198,14 @@
             margin-top: 0.5%;
             width: 60%;
             max-width: 60%; /* 防止超出螢幕 */
+            
+            position: absolute; /* 使用 absolute 定位 */
+            margin-top: 50px;
         }
 
         #progressBar {
             flex: 1;
             margin-right: 10px;
-            position: absolute; /* 使用 absolute 定位 */
-            margin-top: 50px;
         }
 
         .subtitle {
