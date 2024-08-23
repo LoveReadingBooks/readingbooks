@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Content Viewer</title>
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/67c6c6_df0f28fc83fb470a81924869f489324d~mv2.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*background-color: #e0e0e0;*/
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 0px;
+            /*border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*border: none;*/
+        }
+
+        .audio-controls, .file-controls {
+            display: flex;
+            margin-top: 0.5%;
+        }
+
+        .all-controls {
+            display: flex;
+        }
+
+        .audio-controls button,
+        .file-controls button {
+            margin-right: 10px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 100px;
+            height: 20px;
+        }
+
+        .audio-controls input[type="file"],
+        .file-controls input[type="file"] {
+            margin-right: 10px;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            display: none;
+            width: 150px;
+            height: 20px;
+        }
+
+        .custom-audio-label,
+        .custom-file-label {
+            margin-right: 10px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 150px;
+            height: 20px;
+        }
+
+        .audio-controls button:hover,
+        .file-controls button:hover,
+        .custom-audio-label:hover,
+        .custom-file-label:hover,
+        .show-controls button:hover {
+            background-color: rgb(106, 106, 205);
+        }
+
+        .audio-controls input[type="text"],
+        .file-controls input[type="text"]{
+            margin-right: 10px;
+            font-size: 15px;
+            text-align: center;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            outline: none;
+            color: #ffffff;
+            width: 200px;
+            
+            
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgb(242, 243, 247);
+            opacity: 1; /* Firefox */
+            height: 18px;
+            
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hidden-controls {
+            display: flex;
+            margin-top: 0.5%;
+        }
+
+        .show-controls {
+            display: flex;
+            margin-top: 0.5%;
+            gap: 10px; /* 可以調整按鈕之間的間距 */
+        }
+
+        #ozButton {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+            cursor: pointer;
+            width: 180px;
+            height: 20px;
+        }
+
+        #showButton {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 180px;
+            height: 20px;
+        }
+
+        #playcontrolButton {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 80px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .hidden-controls button {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 180px;
+            height: 20px;
+        }
+
+        pre {
+            background-color: #e4e7fe;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: left;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 22px;
+            line-height: 1.5;
+            color: #333333;
+            height: 100%;
+            width: 96%;
+        }
+
+        #progressContainer {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5%;
+            width: 60%;
+        }
+
+        #progressBar {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .subtitle {
+            margin-bottom: 10px;
+            font-size: 22px; /* Adjust as needed */
+            color: #000; /* Ensure visibility */
+            cursor: pointer; /* 新增的樣式 */
+
+            white-space: pre-wrap; /* 自動換行 */
+            word-wrap: break-word; /* 處理長單詞換行 */
+
+
+            /*display: inline; 
+            white-space: nowrap; */
+            
+        }
+
+        .highlight {
+            background-color: rgb(224, 227, 250);
+            font-weight: bold;
+        }
+
+        .chapter-button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 180px;
+            height: 30px;
+        }
+
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="all-controls" id="allControls">
+            <div class="audio-controls" id="audioControls">
+                <input type="text" id="audioUrlInput" placeholder="Enter audio URL">
+                <button id="playButton">Play Audio</button>
+                <input type="file" id="audioFileInput" accept="audio/*">
+                <label for="audioFileInput" class="custom-audio-label">Choose Audio File</label>
+            </div>
+            <div class="file-controls" id="fileControls">
+                <input type="text" id="fileUrlInput" placeholder="Enter file URL">
+                <button id="openFileButton">Open File</button>
+                <input type="file" id="fileInput" accept=".txt, .srt, .pdf">
+                <label for="fileInput" class="custom-file-label">Choose Text File</label>
+            </div>
+            <div class="hidden-controls" id="hiddenControls">
+                <button id="hiddenButton">hidden Control Buttons</button>
+            </div>
+        </div>
+        
+        <div class="show-controls" id="Controls">
+            <button id="ozButton" style="display: none;">OZ</button>
+            <button id="showButton" style="display: none;">Show Control Buttons</button>
+            
+        </div>
+        <audio id="audioPlayer" controls style="display: none;"></audio>
+        <div id="progressContainer" style="display: none;">
+            <input type="range" id="progressBar" min="0" max="100" value="0">
+            <span id="currentTime">0:00</span>
+            <button id="playcontrolButton" style="display: none;">Pause</button>
+        </div>
+        <pre id="fileContent"></pre>
+    </div>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeDisplay = document.getElementById('currentTime');
+
+        //const audioPlayer = document.getElementById('audioPlayer');
+        const subtitlesDisplay = document.getElementById('fileContent');
+        let subtitles = [];
+
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById('fileControls').classList.add('hidden');
+
+                // Hide hiddenButton if both fileControls and audioControls are hidden
+                //const hiddenButton = document.getElementById('hiddenButton');
+                if (window.getComputedStyle(document.getElementById('fileControls')).display === 'none' && window.getComputedStyle(document.getElementById('audioControls')).display === 'none') {
+                    document.getElementById('hiddenButton').style.display = 'none';
+                }
+
+                document.getElementById('showButton').style.display = 'block';
+
+                if (file.name.endsWith('.pdf')) {
+                    displayPdf(file);
+                } else {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const content = e.target.result;
+                        // 檢查是否包含 <p data-start="..."> 標籤
+                        const isFormattedSubtitle = /<p data-start="(\d+\.?\d*)" data-end="(\d+\.?\d*)">/.test(content);
+                        if (file.name.endsWith('.srt')) {
+                            subtitles = parseSrt(content);
+                            // Display all subtitles and add click event listeners
+                            subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}">${sub.text.replace(/\n/g, '<br>')}</div>`
+                            ).join('');
+                            addSubtitleClickListeners();
+                        } else if (file.name.endsWith('.txt') && isFormattedSubtitle) {
+                            subtitles = parseTxt(content); // 解析txt格式的字幕
+                            // Display parsed subtitles and add click event listeners
+                            subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                            ).join('');
+                            addSubtitleClickListeners();
+                        } else if (file.name.endsWith('.txt')) {
+                            // 將普通txt文件內容直接顯示
+                            subtitlesDisplay.textContent = content;
+                        }
+                    }
+                    reader.readAsText(file);
+                }
+            }
+        });
+
+        document.getElementById('openFileButton').addEventListener('click', function() {
+            const fileUrl = document.getElementById('fileUrlInput').value;
+            if (fileUrl) {
+                fetch(fileUrl)
+                    .then(response => response.text())
+                    .then(text => {
+                        //document.getElementById('fileContent').textContent = text;
+                        subtitles = parseTxt(text);
+                        subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                            `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                        ).join('');
+                        addSubtitleClickListeners();
+                    })
+                    .catch(error => {
+                        alert('Error loading file: ' + error);
+                    });
+                document.getElementById('fileControls').classList.add('hidden');
+
+                // Hide hiddenButton if both fileControls and audioControls are hidden
+                if (window.getComputedStyle(document.getElementById('fileControls')).display === 'none' && window.getComputedStyle(document.getElementById('audioControls')).display === 'none') {
+                    document.getElementById('hiddenButton').style.display = 'none';
+                }
+
+                document.getElementById('showButton').style.display = 'block';
+            } else {
+                alert('Please enter a valid file URL.');
+            }
+        });
+
+
+       
+        function displayPdf(file) {
+            const fileReader = new FileReader();
+            fileReader.onload = function() {
+                const typedarray = new Uint8Array(this.result);
+                pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+                    const container = document.getElementById('fileContent');
+                    container.innerHTML = ''; // 清空现有内容
+
+                    const containerWidth = container.clientWidth; // 获取容器宽度
+                    //const bodyWidth = document.body.clientWidth; // 取得body寬度
+                    //const screenWidth = window.innerWidth; // 获取屏幕宽度
+
+                    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+                        pdf.getPage(pageNumber).then(function(page) {
+                            const viewport = page.getViewport({ scale: 1 });
+                            const scale = containerWidth / viewport.width; // 根据容器宽度计算缩放比例
+                            //const scale = bodyWidth / viewport.width;
+                            //const scale = screenWidth / viewport.width; // 根據螢幕寬度計算縮放比例
+                            const scaledViewport = page.getViewport({ scale: scale });
+
+                            const canvas = document.createElement('canvas');
+                            const context = canvas.getContext('2d');
+                            canvas.height = scaledViewport.height;
+                            canvas.width = scaledViewport.width;
+
+                            // Create a wrapper div for the canvas
+                            const canvasWrapper = document.createElement('div');
+                            canvasWrapper.style.display = 'flex';
+                            canvasWrapper.style.justifyContent = 'center';
+                            canvasWrapper.style.marginBottom = '3px'; // Optional: add some space between pages
+
+
+                            const renderContext = {
+                                canvasContext: context,
+                                viewport: scaledViewport
+                            };
+
+                            page.render(renderContext).promise.then(function() {
+                                //container.appendChild(canvas);
+                                canvasWrapper.appendChild(canvas);
+                                container.appendChild(canvasWrapper); 
+
+                            });
+                        });
+                    }
+                });
+            };
+            fileReader.readAsArrayBuffer(file);
+        }
+
+        function addSubtitleClickListeners() {
+            const subtitleElements = document.querySelectorAll('.subtitle');
+            subtitleElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    // 使用 parseFloat 確保獲取到正確的開始時間
+                    const startTime = parseFloat(this.getAttribute('data-start'));
+                    if (!isNaN(startTime)) {
+                        // 避免小數點精度問題，設置稍後的時間以確保點擊後能跳轉到正確的時間
+                        audioPlayer.currentTime = startTime + 0.01;
+                        //audioPlayer.currentTime = startTime;
+                    }
+                });
+            });
+        }
+
+
+        /*function parseTxt(txtContent) {
+            //const subtitleRegex = /<p data-start="(\d+\.?\d*)" data-end="(\d+\.?\d*)">(.*?)<\/p>/g;
+
+            const subtitleRegex = /<p data-start="(\d+\.?\d*)" data-end="(\d+\.?\d*)">([\s\S]*?)<\/p>/g;
+
+            let match;
+            const subtitles = [];
+            let id = 0;
+
+            while ((match = subtitleRegex.exec(txtContent)) !== null) {
+                subtitles.push({
+                    id: id++,
+                    start: parseFloat(match[1]),
+                    end: parseFloat(match[2]),
+                    text: match[3].trim()
+                    //text: match[3].replace(/\n/g, ' ').trim() // 將<p>內的多行字幕合併成一行
+                });
+            }
+
+            return subtitles;
+        }*/
+
+        function parseTxt(txtContent) {
+            // 匹配 <p> 標籤，並提取 data-start 和 data-end 屬性，以及 style 屬性中的數字和標籤內容
+            const subtitleRegex = /<p\s+data-start="(\d+\.?\d*)"\s+data-end="(\d+\.?\d*)"(?:\s+style="[^"]*?(\d+\.?\d*)[^"]*")?>\s*([\s\S]*?)<\/p>/g;
+
+            let match;
+            const subtitles = [];
+            let id = 0;
+
+            while ((match = subtitleRegex.exec(txtContent)) !== null) {
+                // 提取 style 屬性中的數字（如果存在）
+                const styleNumber = match[3] ? parseFloat(match[3]) : null;
+
+                // 清理 HTML 標籤，只提取純文本
+                const text = match[4].replace(/<\/?[^>]+>/g, '').trim();
+
+                subtitles.push({
+                    id: id++,
+                    start: parseFloat(match[1]),
+                    end: parseFloat(match[2]),
+                    marginLeft: match[3], // 擷取的 margin-left 值
+                    text: text
+                });
+            }
+
+            return subtitles;
+        }
+
+        //let currentHighlightedSubtitleId = null;
+
+        audioPlayer.addEventListener('timeupdate', function() {
+            const currentTime = audioPlayer.currentTime;
+            const progress = (currentTime / audioPlayer.duration) * 100;
+            progressBar.value = progress;
+
+            // Update current time display
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = Math.floor(currentTime % 60);
+            currentTimeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+            // Clear previous highlights
+            const allSubtitles = subtitlesDisplay.querySelectorAll('.subtitle');
+            allSubtitles.forEach(sub => sub.classList.remove('highlight'));
+
+            // Highlight the current subtitle
+            let foundSubtitle = false;
+            subtitles.forEach(sub => {
+                if (currentTime >= sub.start && currentTime <= sub.end && !foundSubtitle) {
+                    const subtitleElement = document.getElementById(`subtitle-${sub.id}`);
+                    if (subtitleElement) {
+                        subtitleElement.classList.add('highlight');
+
+                        subtitleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        foundSubtitle = true; // Stop checking further subtitles once the current one is found
+                    }
+                }
+            });
+        });
+
+        // Function to parse SRT file and extract subtitle texts
+        function parseSrt(srtContent) {
+            const subtitleRegex = /(\d+)\s*\n(\d{2}:\d{2}:\d{2},\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2},\d{3})\s*\n([\s\S]*?)(?=\n\n|\n$)/g;
+            let match;
+            const subtitles = [];
+            let id = 0;
+
+            while ((match = subtitleRegex.exec(srtContent)) !== null) {
+                subtitles.push({
+                    id: id++,
+                    start: timeToSeconds(match[2]),
+                    end: timeToSeconds(match[3]),
+                    text: match[4].trim()
+                });
+            }
+
+            return subtitles;
+        }
+
+
+        function timeToSeconds(time) {
+            const [hours, minutes, seconds] = time.split(':');
+            const [sec, ms] = seconds.split(',');
+            return parseInt(hours) * 3600 + parseInt(minutes) * 60 + parseInt(sec) + parseInt(ms) / 1000;
+        }
+
+        document.getElementById('playButton').addEventListener('click', function() {
+            const audioUrl = document.getElementById('audioUrlInput').value;
+            if (audioUrl) {
+                audioPlayer.src = audioUrl;
+                //audioPlayer.style.display = 'block';
+                audioPlayer.play();
+                document.getElementById('audioControls').classList.add('hidden');
+
+                if (window.getComputedStyle(document.getElementById('fileControls')).display === 'none' && window.getComputedStyle(document.getElementById('audioControls')).display === 'none') {
+                    document.getElementById('hiddenButton').style.display = 'none';
+                }
+
+                document.getElementById('showButton').style.display = 'block';
+                document.getElementById('progressContainer').style.display = 'flex';
+            } else {
+                alert('Please enter a valid audio URL.');
+            }
+        });
+
+        document.getElementById('audioFileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const audioUrl = URL.createObjectURL(file);
+                audioPlayer.src = audioUrl;
+                audioPlayer.play();
+                document.getElementById('audioControls').classList.add('hidden');
+
+                // Hide hiddenButton if both fileControls and audioControls are hidden
+                if (window.getComputedStyle(document.getElementById('fileControls')).display === 'none' && window.getComputedStyle(document.getElementById('audioControls')).display === 'none') {
+                    document.getElementById('hiddenButton').style.display = 'none';
+                }
+
+                document.getElementById('showButton').style.display = 'block';
+                document.getElementById('progressContainer').style.display = 'flex';
+            }
+        });
+
+        document.getElementById('showButton').addEventListener('click', function() {
+            document.getElementById('audioControls').classList.remove('hidden');
+            document.getElementById('fileControls').classList.remove('hidden');
+            //document.getElementById('hiddenButton').classList.remove('hidden');
+            
+            document.getElementById('hiddenButton').style.display = 'block';
+            document.getElementById('ozButton').style.display = 'none'; // 顯示 OZ 按鈕
+            document.getElementById('showButton').style.display = 'none';
+            document.getElementById('playcontrolButton').style.display = 'none';
+
+            // Restart the inactivity timer
+            resetInactivityTimer();
+        });
+
+        document.getElementById('playcontrolButton').addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                document.getElementById('playcontrolButton').textContent = 'Pause';
+            } else {
+                audioPlayer.pause();
+                document.getElementById('playcontrolButton').textContent = 'Play';
+            }
+        });
+
+        document.getElementById('hiddenButton').addEventListener('click', function() {
+            document.getElementById('audioControls').classList.add('hidden');
+            document.getElementById('fileControls').classList.add('hidden');
+            //document.getElementById('hiddenButton').classList.add('hidden');
+            document.getElementById('showButton').style.display = 'block';
+            document.getElementById('playcontrolButton').style.display = 'block';
+            document.getElementById('hiddenButton').style.display = 'none';
+            document.getElementById('ozButton').style.display = 'block'; // 顯示 OZ 按鈕
+
+            // Restart the inactivity timer
+            resetInactivityTimer();
+        });
+
+        document.getElementById('ozButton').addEventListener('click', function() {
+            document.getElementById('progressContainer').style.display = 'none';
+            //audioPlayer.pause(); // 停止播放
+            audioPlayer.src = '';
+            const container = document.getElementById('fileContent');
+            container.innerHTML = ''; // 清空容器以防止重複生成按鈕
+
+            // 章節對應的音頻和字幕URL
+            const chapters = {
+                1: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_6e9b53c9463a47f5905bf6cf894ab921.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_7b4c97d37d42484cba0d11fa8ee845ea.mp3'
+                },
+                2: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_892e81f0ef2b4ce1b5d1c1b826c0541a.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_b2f6b9c7e92a490e8047ac90ca294731.mp3'
+                },
+                3: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_607835b9727d494086b9606cae776a24.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_4331cddd0fe9410fb7d50c81f115865c.mp3'
+                },
+                4: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_855a7bcad9084b08a7e09b8c62f90260.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_9d255837d3b84ae4be7ceab81f2c3ebe.mp3'
+                },
+                5: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_bb14c7511bb64935b475fc9a43b664c9.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_5661cf819a6d434caf5c63d36b08964a.mp3'
+                },
+                6: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d7a7e76749714029904abfca7380f7f0.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_eece5669a50340f89e57b8d402e33d3e.mp3'
+                },
+                7: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_a256a2c5834f486a8915076c2f965d2e.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_1e73444ab05646bcad0bc555fa7de24c.mp3'
+                },
+                8: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_760eca690a26411e84658c81db0945e0.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_28a992bf7a12494ba3e6b3cdaa799782.mp3'
+                },
+                9: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b0e49a7c62b04f9b932c15a999ad963f.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_51c2f4d84fa2410ab66138f88b25e94d.mp3'
+                },
+                10: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_8a323fc87a8449d2a12415d63366e4f4.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_c268c4481710478989a7e8b3135b4839.mp3'
+                },
+                11: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_4953fb9be38d45e8b3975e3448dc4459.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_d2f4d67225654ad895985b4a51c92143.mp3'
+                },
+                12: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e1eff23eedf74ae5bffebc2b9b9abb37.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_8a8c9c0edc5d45a2876719b1797ad022.mp3'
+                },
+                13: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_ae5faf1e78064a77b4f41f8da0a04c52.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_15bcbec3e2c44f7997487d4dc8257829.mp3'
+                },
+                14: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_423eea47e37b462794fc7b76771f714d.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_e9921c8cb5b844588118282b17b6861f.mp3'
+                },
+                15: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e19dd7eefe2f4154815d69aa52a89ed0.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_aa9edaf0e5384708b5022a2c7c63dc96.mp3'
+                },
+                16: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_abeb2861c42e4f22b84fd8c51b542925.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_6815dcfa41f444e087fe3c5879c63ecb.mp3'
+                },
+                17: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_29428a52d41840699a0c2bca349964a0.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_ee06611c6e6645f99ff48151704b850b.mp3'
+                },
+                18: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b9e5384788c84c94abb4b52913216f98.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_d6b22edc11084878a936e0473dd4a9b4.mp3'
+                },
+                19: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_c443befd40004223bdf7c0c19374bbc2.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_9e87d87d3e5d4b4294a2d64fa9148ff3.mp3'
+                },
+                20: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_bf33acbf906f49f4b37f52712f2ea9ef.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_997080ca9ae04357b5ec6caffb7930bc.mp3'
+                },
+                21: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_ce7f795d09f44abcb198c864abb9b157.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_b52bfc2375ba492d8884594b2e8c5749.mp3'
+                },
+                22: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f81fe35362c34534afdcb73c17023663.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3'
+                },
+                23: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_9f6d6ec323a643c8ad3019cdb07dfc88.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3'
+                },
+                24: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_3c2f0b0dbed74866b423d7fcbd76a260.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3'
+                }
+            };
+
+            for (let i = 1; i <= 24; i++) {
+                const button = document.createElement('button');
+                button.textContent = `Chapter ${i}`;
+                button.id = `chapterButton${i}`;
+                button.className = 'chapter-button';
+                container.appendChild(button);
+
+                if (chapters[i]) {
+                    button.addEventListener('click', function() {
+                        const { textUrl, audioUrl } = chapters[i];
+                        
+                        // 加載字幕
+                        fetch(textUrl)
+                            .then(response => response.text())
+                            .then(text => {
+                                subtitles = parseTxt(text);
+                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        // 播放音頻
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        //document.getElementById('audioUrlInput').value = audioUrl;
+                        document.getElementById('progressContainer').style.display = 'flex';
+                    });
+                }
+
+                /*if (i === 22) {
+                    button.addEventListener('click', function() {
+                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f81fe35362c34534afdcb73c17023663.txt')
+                            .then(response => response.text())
+                            .then(text => {
+                                subtitles = parseTxt(text);
+                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3';
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        document.getElementById('audioUrlInput').value = audioUrl;
+                        document.getElementById('progressContainer').style.display = 'flex';
+                    });
+                }
+                if (i === 23) {
+                    button.addEventListener('click', function() {
+                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_9f6d6ec323a643c8ad3019cdb07dfc88.txt')
+                            .then(response => response.text())
+                            .then(text => {
+                                subtitles = parseTxt(text);
+                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3';
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        document.getElementById('audioUrlInput').value = audioUrl;
+                        document.getElementById('progressContainer').style.display = 'flex';
+                    });
+                }
+                if (i === 24) {
+                    button.addEventListener('click', function() {
+                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_3c2f0b0dbed74866b423d7fcbd76a260.txt')
+                            .then(response => response.text())
+                            .then(text => {
+                                subtitles = parseTxt(text);
+                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3';
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        document.getElementById('audioUrlInput').value = audioUrl;
+                        document.getElementById('progressContainer').style.display = 'flex';
+                    });
+                }*/
+                
+            }
+        });
+
+
+        /*document.getElementById('fileContent').addEventListener('click', function(event) {
+            if (event.target && event.target.id === 'chapterButton23') {
+                fetch('23.txt')
+                    .then(response => response.text())
+                    .then(text => {
+                        document.getElementById('fileUrlInput').value = '23.txt';
+                        document.getElementById('fileContent').innerText = text;
+                    });
+
+                const audioElement = new Audio('https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3');
+                audioElement.play();
+
+                document.getElementById('audioUrlInput').value = 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3';
+            }
+        });*/
+
+        audioPlayer.addEventListener('timeupdate', function() {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.value = progress;
+
+            const minutes = Math.floor(audioPlayer.currentTime / 60);
+            const seconds = Math.floor(audioPlayer.currentTime % 60);
+            currentTimeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        });
+
+        progressBar.addEventListener('input', function() {
+            const time = (progressBar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = time;
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' || event.code === 'Enter') {
+                event.preventDefault();
+                if (audioPlayer.paused) {
+                    audioPlayer.play();
+                    document.getElementById('playcontrolButton').textContent = 'Pause';
+                } else {
+                    audioPlayer.pause();
+                    document.getElementById('playcontrolButton').textContent = 'Play';
+                }
+            }
+        });
+
+        let inactivityTimer;
+        const inactivityDelay = 18000; // 18 seconds
+
+        const elementsToHide = [
+            document.getElementById('audioControls'),
+            document.getElementById('fileControls')
+        ];
+        const showControlsButton = document.getElementById('showButton');
+
+        // Function to hide elements and show the control button
+        function handleInactivity() {
+            elementsToHide.forEach(el => el.classList.add('hidden'));
+            document.getElementById('hiddenButton').style.display = 'none';
+            showControlsButton.style.display = 'block';
+            document.getElementById('playcontrolButton').style.display = 'block';
+            document.getElementById('ozButton').style.display = 'block'; // 顯示 OZ 按鈕
+        }
+
+        // Reset the inactivity timer
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(handleInactivity, inactivityDelay);
+        }
+
+        // Add event listeners to reset timer on user interactions
+        document.getElementById('audioControls').addEventListener('input', resetInactivityTimer);
+        document.getElementById('audioControls').addEventListener('change', resetInactivityTimer);
+        document.getElementById('fileControls').addEventListener('input', resetInactivityTimer);
+        document.getElementById('fileControls').addEventListener('change', resetInactivityTimer);
+        document.getElementById('playButton').addEventListener('click', resetInactivityTimer);
+        document.getElementById('audioFileInput').addEventListener('change', resetInactivityTimer);
+        document.getElementById('openFileButton').addEventListener('click', resetInactivityTimer);
+        document.getElementById('fileInput').addEventListener('change', resetInactivityTimer);
+        document.getElementById('fileUrlInput').addEventListener('input', resetInactivityTimer);
+        document.getElementById('audioUrlInput').addEventListener('input', resetInactivityTimer);
+
+        // Initialize the inactivity timer when the script loads
+        resetInactivityTimer();
+
+    </script>
+</body>
+</html>
