@@ -586,6 +586,11 @@
             document.getElementById('ozButton').style.display = 'none'; // 顯示 OZ 按鈕
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
+            document.getElementById('progressContainer').style.display = 'none';
+            audioPlayer.pause();
+            document.getElementById('playcontrolButton').textContent = 'Pause';
+            const container = document.getElementById('fileContent');
+            container.innerHTML = ''; // 清空容器以防止重複生成按鈕
 
             // Restart the inactivity timer
             resetInactivityTimer();
@@ -609,6 +614,7 @@
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
             document.getElementById('ozButton').style.display = 'block'; // 顯示 OZ 按鈕
+            //document.getElementById('progressContainer').style.display = 'flex';
 
             // Restart the inactivity timer
             resetInactivityTimer();
