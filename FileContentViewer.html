@@ -41,7 +41,7 @@
 
         .all-controls {
             position: fixed;
-            margin-top: 0.5%;
+            margin-top: 1%;
             margin-left: 3%;
         }
 
@@ -124,7 +124,6 @@
         }
 
         .show-controls {
-            position: fixed;
             display: flex;
             gap: 10px; /* 可以調整按鈕之間的間距 */
             
@@ -154,7 +153,6 @@
         }
 
         #playcontrolButton {
-            position: fixed;
             font-size: 16px;
             border: none;
             background-color: rgb(136, 136, 235);
@@ -178,7 +176,6 @@
         }
 
         pre {
-            position: fixed;
             background-color: #e4e7fe;
             padding: 15px;
             border-radius: 4px;
@@ -190,14 +187,13 @@
             color: #333333;
         
             font-size: 28px;
-            margin-top: 22%;
+            margin-top: 17%;
             margin-left: 2%;
             margin-right: 2%;
             overflow-y: auto;
         }
 
         #progressContainer {
-            position: fixed;
             display: flex;
             align-items: center;
             margin-top: 0.5%;
@@ -268,18 +264,17 @@
             <div class="hidden-controls" id="hiddenControls">
                 <button id="hiddenButton">hidden Control Buttons</button>
             </div>
-        </div>
-        
-        <div class="show-controls" id="Controls">
-            <button id="ozButton" style="display: none;">OZ</button>
-            <button id="showButton" style="display: none;">Show Control Buttons</button>
-            
-        </div>
-        <audio id="audioPlayer" controls style="display: none;"></audio>
-        <div id="progressContainer" style="display: none;">
-            <input type="range" id="progressBar" min="0" max="100" value="0">
-            <span id="currentTime" style="display: none;">0:00</span>
-            <button id="playcontrolButton">Pause</button>
+            <div class="show-controls" id="Controls">
+                <button id="ozButton" style="display: none;">OZ</button>
+                <button id="showButton" style="display: none;">Show Control Buttons</button>
+                
+            </div>
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+            <div id="progressContainer" style="display: none;">
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+                <span id="currentTime" style="display: none;">0:00</span>
+                <button id="playcontrolButton">Pause</button>
+            </div>
         </div>
         
     </div>
