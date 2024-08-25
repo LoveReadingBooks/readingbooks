@@ -175,7 +175,7 @@
             height: 20px;
         }
 
-        #fileContent {
+        pre {
             background-color: #e4e7fe;
             padding: 15px;
             border-radius: 4px;
@@ -279,8 +279,8 @@
         
     </div>
 
-    <!--<pre id="fileContent"></pre>-->
-    <div class="transcript-container" id="fileContent"></div>
+    <pre id="fileContent"></pre>
+    <!--<div class="transcript-container" id="fileContent"></div>-->
     
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
@@ -506,7 +506,10 @@
                     if (subtitleElement) {
                         subtitleElement.classList.add('highlight');
 
+                        //subtitleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         subtitleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        window.scrollBy(0, -window.innerHeight * 0.11);
+
 
                         foundSubtitle = true; // Stop checking further subtitles once the current one is found
                     }
