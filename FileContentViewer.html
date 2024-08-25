@@ -626,7 +626,9 @@
         document.getElementById('ozButton').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
             //audioPlayer.pause(); // 停止播放
-            audioPlayer.src = '';
+            //audioPlayer.src = '';
+            audioPlayer.pause();
+            document.getElementById('playcontrolButton').textContent = 'Pause';
             const container = document.getElementById('fileContent');
             container.innerHTML = ''; // 清空容器以防止重複生成按鈕
 
