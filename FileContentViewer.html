@@ -6,6 +6,10 @@
     <title>File Content Viewer</title>
     <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/67c6c6_df0f28fc83fb470a81924869f489324d~mv2.png">
     <style>
+        body, html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: Arial, sans-serif;
             /*background-color: #e0e0e0;*/
@@ -102,7 +106,7 @@
             background-color: rgb(136, 136, 235);
             outline: none;
             color: #ffffff;
-            width: 120px;
+            width: 100px;
             
             
         }
@@ -250,13 +254,13 @@
     <div class="container">
         <div class="all-controls" id="allControls">
             <div class="audio-controls" id="audioControls">
-                <input type="text" id="audioUrlInput" placeholder="Enter audio URL">
+                <input type="text" id="audioUrlInput" placeholder="Enter URL">
                 <button id="playButton">Open</button>
                 <input type="file" id="audioFileInput" accept="audio/*">
                 <label for="audioFileInput" class="custom-audio-label">Choose Audio</label>
             </div>
             <div class="file-controls" id="fileControls">
-                <input type="text" id="fileUrlInput" placeholder="Enter file URL">
+                <input type="text" id="fileUrlInput" placeholder="Enter URL">
                 <button id="openFileButton">Open</button>
                 <input type="file" id="fileInput" accept=".txt, .srt, .pdf">
                 <label for="fileInput" class="custom-file-label">Choose Text</label>
