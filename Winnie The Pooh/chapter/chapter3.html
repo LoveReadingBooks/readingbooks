@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chapter 3</title>
+  <link rel="icon" type="image/png" href="../icon/favicon-16x16.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div id="area">
+    <audio id="audio" controls style="width: 95%;">
+      <source src="https://static.wixstatic.com/mp3/67c6c6_3590b9f0529247bc83357563119c2cb0.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="progress-bar" id="progressBar">
+      <div class="progress-bar-fill" id="progressBarFill"></div>
+    </div>
+    <div id="button">
+      <button class="button" id="playButton" onclick="playAudio()">play</button>
+      <button class="button" onclick="playPause()">pause</button>
+      <button class="button" onclick="prevSentence()">previous</button>
+      <button class="button" onclick="nextSentence()">next</button>
+      <button class="button" onclick="jumpToFirstSentence()">first</button>
+      <button class="button" onclick="jumpToLastSentence()">last</button>
+      <button id="shortcut">Shortcut: "Space": play/pause; ⬅️ ➡️ ⬆️ ⬇️ </button>
+      <a id="home" href="../index.html">Home</a>
+    </div>
+  </div>
+
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
