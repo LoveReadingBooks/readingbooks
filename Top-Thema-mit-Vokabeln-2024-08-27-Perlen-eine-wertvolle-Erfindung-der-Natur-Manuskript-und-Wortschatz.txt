@@ -1,0 +1,20 @@
+<p data-start="9.28" data-end="12.22">Perlen – eine wertvolle Erfindung der Natur</p>
+<p data-start="9.28" data-end="12.22">珍珠——自然界的寶貴創造</p>
+<p data-start="13.88" data-end="24.94">Seit Jahrtausenden faszinieren Perlen die Menschheit. Sie werden für viel Geld verkauft und kommen in zahlreichen Mythen vor. Doch die wertvollen Kugeln haben auch eine traurige Geschichte.</p>
+<p data-start="13.88" data-end="24.94">數千年來，珍珠一直吸引著人類的目光。它們以高價出售，並出現在無數的神話中。然而，這些珍貴的圓珠也有著一段悲傷的歷史。</p>
+<p data-start="26.12" data-end="40.46">Sie sind schön, teuer und dienten schon früh besonders Königinnen und Königen als Schmuck: Perlen. Die seltenen Edelsteine faszinieren uns seit Jahrtausenden. So gibt es in vielen Kulturen Erzählungen über ihre Entstehung.</p>
+<p data-start="26.12" data-end="40.46">珍珠美麗、昂貴，早在古代便成為王后和國王們的首飾。這些稀有的寶石數千年來一直讓我們著迷。在許多文化中，關於珍珠的起源都有著不同的傳說。</p>
+<p data-start="41.20" data-end="54.26">In einem Hindu-Mythos etwa heißt es, dass der Gott Krishna die erste Perle aus dem Meer holte und sie seiner Tochter zur Hochzeit schenkte. Im alten China dagegen hielt man Drachen für die Hüter der wertvollen Kugeln.</p>
+<p data-start="41.20" data-end="54.26">例如，在一個印度教的神話中，據說神祇克里希那（Krishna）從海中取出了第一顆珍珠，並將其作為婚禮禮物送給了他的女兒。在古代中國，則認為龍是這些珍貴圓珠的守護者。</p>
+<p data-start="55.00" data-end="60.12">Und das antike Griechenland beschrieb sie als Freudentränen der Liebesgöttin Aphrodite.</p>
+<p data-start="55.00" data-end="60.12">而古希臘則將珍珠描述為愛神阿芙羅黛蒂的喜悅之淚。</p>
+<p data-start="61.42" data-end="66.84">Tatsächlich sind Perlen aber die einzigen Edelsteine, die von Lebewesen geschaffen werden – Muscheln.</p>
+<p data-start="61.42" data-end="66.84">事實上，珍珠是唯一由生物創造的寶石——由貝類製造。</p>
+<p data-start="67.96" data-end="92.78">Die Entstehung von Perlen ist eigentlich ein Verteidigungsmechanismus der Tiere. Wenn etwas Hartes in die weichen Teile der Muschel eindringt, überzieht sie das harte Objekt mit vielen Schichten aus Perlmutt. So wächst im Inneren der Muschel langsam eine Perle heran, die teuer verkauft werden kann – wenn man sie unter Wasser findet. Der 2021 verstorbene William Abernethy war ein solcher Perlentaucher.</p>
+<p data-start="67.96" data-end="92.78">珍珠的形成其實是貝類的一種防禦機制。當有硬物進入貝殼的柔軟部分時，貝類會用多層珍珠質包裹這個硬物。因此，珍珠在貝殼內部慢慢形成，若能在水中找到它們，便可高價出售。2021年去世的威廉·亞伯內西（William Abernethy）就是這樣一位珍珠潛水員。</p>
+<p data-start="94.40" data-end="110.78">1967 hatte der Schotte viel Glück: Er fand auf dem Grund des Flusses Tay eine große Perle. Das auch „Little Willie“ genannte Stück hatte ein Gewicht von 14,1 Karat und wurde 2024 für mehr als 110.000 Euro versteigert.</p>
+<p data-start="94.40" data-end="110.78">1967年，這位蘇格蘭人非常幸運：他在泰河底發現了一顆大珍珠。這顆被稱為「小威利」的珍珠重14.1克拉，並於2024年以超過11萬歐元的價格拍賣。</p>
+<p data-start="111.78" data-end="147.64">Als Abernethy die Perle fand, wuchs sie bereits seit 80 Jahren in ihrer Muschel heran – ein ganzes Menschenleben lang. Perlen versprachen immer schon großen Reichtum. Manchmal geschah ihretwegen aber auch großes Unrecht – etwa als die Spanier die indigene Bevölkerung Südamerikas ausbeuteten. Im 16. Jahrhundert entstanden vor der Küste Venezuelas ganze Perlentaucher-Siedlungen. „Die Siedlungen wurden schnell berüchtigt, weil sich […] ein brutales Arbeitssystem des Perlentauchens entwickelte“, schreibt die Historikerin Molly Warsh.</p>
+<p data-start="111.78" data-end="147.64">當亞伯內西找到這顆珍珠時，它已在貝殼中成長了80年——整整一個人類的壽命。珍珠一直被認為象徵著巨大財富。然而，有時為了珍珠也發生了巨大的不公——例如，西班牙人剝削了南美洲的原住民。16世紀時，委內瑞拉海岸前出現了許多珍珠潛水員的聚落。「這些聚落很快就因為發展出[…]一種殘酷的珍珠潛水工作制度而聲名狼藉」，歷史學家莫莉·沃什（Molly Warsh）如此寫道。</p>
+<p data-start="147.86" data-end="157.16">Trotz ihrer teils blutigen Geschichte sind Perlen auch im 21. Jahrhundert noch sehr begehrt: Die Versteigerung der Abernethy-Perle ist das jüngste Beispiel dafür.</p>
+<p data-start="147.86" data-end="157.16">儘管珍珠的歷史部分充滿血腥，但即使在21世紀，它們依然備受追捧：亞伯內西珍珠的拍賣就是最新的例子。</p>
