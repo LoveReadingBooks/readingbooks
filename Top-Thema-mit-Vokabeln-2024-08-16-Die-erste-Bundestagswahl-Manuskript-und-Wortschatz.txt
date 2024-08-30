@@ -1,0 +1,18 @@
+<p data-start="9.90" data-end="11.58">Die erste Bundestagswahl</p>
+<p data-start="9.90" data-end="11.58">第一次聯邦議會選舉</p>
+<p data-start="12.66" data-end="18.58">Vor 75 Jahren fand in Westdeutschland die erste freie Parlamentswahl nach dem Zweiten Weltkrieg statt.</p>
+<p data-start="12.66" data-end="18.58">75年前，西德舉行了第二次世界大戰後的第一次自由議會選舉。</p>
+<p data-start="19.34" data-end="26.36">Vor 75 Jahren fand in Westdeutschland die erste freie Parlamentswahl nach dem Zweiten Weltkrieg statt.</p>
+<p data-start="19.34" data-end="26.36">75年前，西德舉行了第二次世界大戰後的第一次自由議會選舉。</p>
+<p data-start="27.62" data-end="45.98">Am 14. August 1949 gab es die Bundesrepublik Deutschland erst seit wenigen Monaten. Für die damals etwa 31 Millionen Wahlberechtigten war die allererste Bundestagswahl „ein Neuanfang im Wählen“, sagt der Historiker Benedikt Wintgens.</p>
+<p data-start="27.62" data-end="45.98">1949年8月14日，德意志聯邦共和國才成立了幾個月。對於當時大約3100萬有投票權的人來說，第一次聯邦議會選舉是「選舉的新開端」，歷史學家本尼迪克特·溫特根斯這樣說道。</p>
+<p data-start="46.92" data-end="75.78">„[D]er Zivilisationsbruch und der Zweite Weltkrieg mit all seinen Folgen“ hatten Deutschland völlig zerstört, so Wintgens. Die vorangegangenen zwölf Jahre der NS-Diktatur waren von schrecklicher Gewalt, Terror und Massenmorden in Deutschland und in vielen anderen Ländern Europas geprägt. Nun hatten die Deutschen wieder die Wahl zwischen unterschiedlichen Parteien. Alle Deutschen?</p>
+<p data-start="46.92" data-end="75.78">溫特根斯表示：「文明的破裂和第二次世界大戰及其所有後果」徹底摧毀了德國。在此之前的十二年納粹獨裁統治充滿了恐怖暴力和在德國及歐洲許多其他國家的大規模屠殺。如今，德國人再次有了在不同政黨之間選擇的機會。所有德國人都有選擇的權利嗎？</p>
+<p data-start="76.22" data-end="101.72">Nur die westlichen Besatzungsmächte Großbritannien, Frankreich und die USA erlaubten Demokratie. In der sowjetischen Besatzungszone in Ostdeutschland entstand dagegen ein kommunistischer Staat ohne freie Wahlen, die DDR. Deutschland blieb noch 40 Jahre lang geteilt. Doch zunächst war gar nicht klar, ob die Westdeutschen an der ersten freien Wahl seit 1932 teilnehmen würden.</p>
+<p data-start="76.22" data-end="101.72">只有西方的佔領勢力——英國、法國和美國——允許民主。在東德的蘇聯佔領區，則建立了一個沒有自由選舉的共產主義國家，即德意志民主共和國（東德）。德國還將分裂40年。然而，最初並不清楚西德人是否會參加自1932年以來的第一次自由選舉。</p>
+<p data-start="102.50" data-end="120.32">Man forderte die Bevölkerung deshalb mit deutlichen Worten zum Wählen auf: „Am 14. August darf keiner zuhause bleiben. Alle müssen zur Wahlurne gehen“, sagte Konrad Adenauer, der konservative Spitzenkandidat. Das zeigte Wirkung:</p>
+<p data-start="102.50" data-end="120.32">因此，人們用明確的言詞呼籲民眾參加投票：「8月14日當天，沒有人應該待在家裡。所有人都必須前往投票箱投票」，保守派候選人康拉德·阿登納如是說。這一呼籲產生了效果：</p>
+<p data-start="121.10" data-end="149.94">78,5 Prozent der Wahlberechtigten gaben ihre Stimme ab – ein klares Zeichen, dass der neue Staat akzeptiert wurde. Und auch Adenauer selbst hatte Erfolg, denn seine Partei gewann die Wahl knapp. Am 15. September 1949 wurde er zum ersten Bundeskanzler gewählt. Das neue Parlament, der Bundestag, befand sich in Bonn – eine Übergangslösung, dachte man.</p>
+<p data-start="121.10" data-end="149.94">78.5%的選民投下了他們的選票——這是一個明確的信號，表明新國家得到了認可。而阿登納本人也取得了成功，因為他的政黨險勝選舉。1949年9月15日，他當選為第一任聯邦總理。新的議會，聯邦議院，設在波恩——當時人們認為這是一個臨時的解決方案。</p>
+<p data-start="150.54" data-end="172.48">Doch erst nach der Wiedervereinigung 1990 wurde entschieden, den Bundestag in die alte und neue Hauptstadt Berlin umziehen zu lassen. Das Grundgesetz, das auch 1949 beschlossen wurde und ebenfalls provisorisch sein sollte, gilt dagegen noch heute.</p>
+<p data-start="150.54" data-end="172.48">但直到1990年兩德統一後，才決定將聯邦議院遷往新舊首都柏林。1949年通過的《基本法》，當時也被視為臨時性文件，但至今仍然有效。</p>
