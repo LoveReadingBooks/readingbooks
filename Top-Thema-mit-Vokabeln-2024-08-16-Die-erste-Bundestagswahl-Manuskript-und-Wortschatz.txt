@@ -1,9 +1,7 @@
 <p data-start="9.90" data-end="11.58">Die erste Bundestagswahl</p>
 <p data-start="9.90" data-end="11.58">第一次聯邦議會選舉</p>
-<p data-start="12.66" data-end="18.58">Vor 75 Jahren fand in Westdeutschland die erste freie Parlamentswahl nach dem Zweiten Weltkrieg statt.</p>
-<p data-start="12.66" data-end="18.58">75年前，西德舉行了第二次世界大戰後的第一次自由議會選舉。</p>
-<p data-start="19.34" data-end="26.36">Vor 75 Jahren fand in Westdeutschland die erste freie Parlamentswahl nach dem Zweiten Weltkrieg statt.</p>
-<p data-start="19.34" data-end="26.36">75年前，西德舉行了第二次世界大戰後的第一次自由議會選舉。</p>
+<p data-start="12.66" data-end="26.36">Vor 75 Jahren fand in Westdeutschland die erste freie Parlamentswahl nach dem Zweiten Weltkrieg statt.</p>
+<p data-start="12.66" data-end="26.36">75年前，西德舉行了第二次世界大戰後的第一次自由議會選舉。</p>
 <p data-start="27.62" data-end="45.98">Am 14. August 1949 gab es die Bundesrepublik Deutschland erst seit wenigen Monaten. Für die damals etwa 31 Millionen Wahlberechtigten war die allererste Bundestagswahl „ein Neuanfang im Wählen“, sagt der Historiker Benedikt Wintgens.</p>
 <p data-start="27.62" data-end="45.98">1949年8月14日，德意志聯邦共和國才成立了幾個月。對於當時大約3100萬有投票權的人來說，第一次聯邦議會選舉是「選舉的新開端」，歷史學家本尼迪克特·溫特根斯這樣說道。</p>
 <p data-start="46.92" data-end="75.78">„[D]er Zivilisationsbruch und der Zweite Weltkrieg mit all seinen Folgen“ hatten Deutschland völlig zerstört, so Wintgens. Die vorangegangenen zwölf Jahre der NS-Diktatur waren von schrecklicher Gewalt, Terror und Massenmorden in Deutschland und in vielen anderen Ländern Europas geprägt. Nun hatten die Deutschen wieder die Wahl zwischen unterschiedlichen Parteien. Alle Deutschen?</p>
