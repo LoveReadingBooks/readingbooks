@@ -1,0 +1,72 @@
+<p data-start="1.00" data-end="3.00">Katze und Maus in Gesellschaft</p>
+
+<p data-start="1.00" data-end="3.00">貓和老鼠的友誼</p>
+
+<p data-start="5.00" data-end="21.00">Eine Katze hatte Bekanntschaft mit einer Maus gemacht und ihr so viel von der großen Liebe und Freundschaft vorgesagt, die sie zu ihr trüge, daß die Maus endlich einwilligte mit ihr zusammen in einem Hause zu wohnen und gemeinschaftliche Wirthschaft zu führen.</p>
+
+<p data-start="5.00" data-end="21.00">有一隻貓結識了一隻老鼠，並對老鼠說了很多關於它對老鼠的愛和友誼，說得老鼠終於同意和貓住在同一個屋子裡，並共同經營家庭。</p>
+
+<p data-start="22.00" data-end="35.00">„Aber für den Winter müssen wir Vorsorge tragen, sonst leiden wir Hunger,“ sagte die Katze, „du Mäuschen, kannst dich nicht überall hinwagen und geräthst mir am Ende in eine Falle.“ </p>
+
+<p data-start="22.00" data-end="35.00">「但是我們必須為冬天做準備，否則我們會挨餓的。」貓說：「小老鼠，你不能隨處亂跑，否則你最後會掉進陷阱。」</p>
+
+<p data-start="36.00" data-end="42.00">Der gute Rath ward also befolgt und ein Töpfchen mit Fett angekauft. </p>
+
+<p data-start="36.00" data-end="42.00">這個好建議因此被接受了，並買了一小罐油脂。</p>
+
+<p data-start="43.00" data-end="64.00">Sie wußten aber nicht wo sie es hinstellen sollten, endlich nach langer Überlegung sprach die Katze „ich weiß keinen Ort, wo es besser aufgehoben wäre, als die Kirche, da getraut sich Niemand etwas wegzunehmen: wir stellen es unter den Altar und rühren es nicht eher an als bis wir es nöthig haben.“ </p>
+
+<p data-start="43.00" data-end="64.00">他們卻不知道該把它放在哪裡，最後經過長時間的思考，貓說：「我想不出比教堂更安全的地方了，沒有人敢在那裡偷東西，我們把它放在祭壇下，直到我們需要時才動它。」</p>
+
+<p data-start="65.00" data-end="93.00">Das Töpfchen ward also in Sicherheit gebracht, aber es dauerte nicht lange, so trug die Katze Gelüsten danach und sprach zur Maus „was ich dir sagen wollte, Mäuschen, ich bin von meiner Base zu Gevatter gebeten: sie hat ein Söhnchen zur Welt gebracht, weiß mit braunen Flecken, das soll ich über die Taufe halten. Laß mich heute ausgehen und besorge du das Haus allein.“ </p>
+
+<p data-start="65.00" data-end="93.00">小罐子就這樣被放在安全的地方，但沒過多久，貓就忍不住了，對老鼠說：「我要告訴你一件事，小老鼠，我的表親邀請我做見證人，她剛生了一個帶有棕色斑點的小兒子，我得去給他洗禮。今天讓我出去一下，你一個人在家照顧家務吧。」 </p>
+
+<p data-start="94.00" data-end="105.00">„Ja, ja,“ antwortete die Maus, „geh in Gottes Namen, wenn du was Gutes ißest, so denk an mich: von dem süßen rothen Kindbetterwein tränk ich auch gerne ein Tröpfchen.“ </p>
+
+<p data-start="94.00" data-end="105.00">「好吧，好吧，」老鼠回答，「去吧，願上帝保佑你，如果你吃到什麼好吃的東西，記得想著我：我也很想喝一點甜甜的紅酒。」</p>
+
+<p data-start="106.00" data-end="113.00">Es war aber alles nicht wahr, die Katze hatte keine Base, und war nicht zu Gevatter gebeten. </p>
+
+<p data-start="106.00" data-end="113.00">但這一切都不是真的，貓根本沒有什麼表親，也沒有被邀請去做見證人。</p>
+
+<p data-start="114.00" data-end="124.00">Sie gieng geradeswegs nach der Kirche, schlich zu dem Fetttöpfchen, fieng an zu lecken und leckte die fette Haut ab. </p>
+
+<p data-start="114.00" data-end="124.00">牠直接去了教堂，悄悄走到油脂罐旁，開始舔那肥油，把那層肥油皮給舔掉了。</p>
+
+<p data-start="125.00" data-end="137.00">Dann machte sie einen Spatziergang auf den Dächern der Stadt, besah sich die Gelegenheit, streckte sich hernach in der Sonne aus und wischte sich den Bart so oft sie an das Fetttöpfchen dachte. </p>
+
+<p data-start="125.00" data-end="137.00">然後在城市的屋頂上散步，觀察四周，接著躺在陽光下，每次想到油脂罐時，就擦拭自己的鬍鬚。</p>
+
+<p data-start="138.00" data-end="142.00">Erst als es Abend war, kam sie wieder nach Haus. </p>
+
+<p data-start="138.00" data-end="142.00">直到晚上，牠才回到家。</p>
+
+<p data-start="143.00" data-end="149.00">„Nun, da bist du ja wieder,“ sagte die Maus, „du hast gewiß einen lustigen Tag gehabt.“ </p>
+
+<p data-start="143.00" data-end="149.00">「啊，你回來了，」老鼠說，「你肯定度過了一個愉快的日子。」 </p>
+
+<p data-start="150.00" data-end="154.00">„Es gieng wohl an“ antwortete die Katze. </p>
+
+<p data-start="150.00" data-end="154.00">「還不錯，」貓回答。</p>
+
+<p data-start="155.00" data-end="161.00">„Was hat denn das Kind für einen Namen bekommen?“ fragte die Maus. </p>
+
+<p data-start="155.00" data-end="161.00">「那個小孩取了什麼名字？」老鼠問道。</p>
+
+<p data-start="162.00" data-end="191.00">„Hautab“ sagte die Katze ganz trocken. „Hautab,“ rief die Maus, „das ist ja ein wunderlicher und seltsamer Name, ist der in eurer Familie gebräuchlich?“ „Was ist da weiter,“ sagte die Katze, „er ist nicht schlechter als Bröseldieb, wie deine Pathen heißen.“ Nicht lange danach überkam die Katze wieder ein Gelüsten.</p>
+
+<p data-start="162.00" data-end="191.00">「舔皮」貓冷冷地說。「舔皮，」老鼠驚呼，「這名字真奇怪，而且有點古怪，這名字在你們家族裡常見嗎？」 「那又怎麼樣，」貓說，「這名字並不比偷麵包屑差，像你那幫教父一樣。」不久之後，貓又動了餓念。</p>
+
+<p data-start="192.00" data-end="254.00">Sie sprach zur Maus „du mußt mir den Gefallen thun und nochmals das Hauswesen allein besorgen, ich bin zum zweitenmal zu Gevatter gebeten, und da das Kind einen weißen Ring um den Hals hat, so kann ichs nicht absagen.“ Die gute Maus willigte ein, die Katze aber schlich hinter der Stadtmauer zu der Kirche und fraß den Fetttopf halb aus. „Es schmeckt nichts besser,“ sagte sie, „als was man selber ißt,“ und war mit ihrem Tagewerk ganz zufrieden. Als sie heimkam, fragte die Maus „wie ist denn dieses Kind getauft worden?“ „Halbaus“ antwortete die Katze. „Halbaus! was du sagst! den Namen habe ich mein Lebtag noch nicht gehört, ich wette der steht nicht in dem Kalender.“ Der Katze wässerte das Maul bald wieder nach dem Leckerwerk. „Aller guten Dinge sind drei,“ sprach sie zu der Maus,</p>
+
+<p data-start="192.00" data-end="254.00">貓對老鼠說：「你得幫我個忙，再次照看一下家務，我又被邀請去做見證人了，這次的小孩脖子上有一圈白環，我不能拒絕。」善良的老鼠答應了，但貓卻溜到了教堂牆後，吃掉了一半的油脂罐。「沒有什麼比自己吃東西更美味的了，」牠說，並對自己的工作非常滿意。當牠回到家時，老鼠問：「這次小孩取了什麼名字？」 「吃了一半，」貓回答。「吃了一半！你說的什麼啊！這名字我一輩子都沒聽過，我敢打賭這名字不會出現在日曆上。」 貓很快又開始垂涎那美味的食物。「好事成三，」貓對老鼠說，</p>
+
+<p data-start="255.00" data-end="367.00">„da soll ich wieder Gevatter stehen, das Kind ist ganz schwarz und hat bloß weiße Pfoten, sonst kein weißes Haar am ganzen Leib, das trifft sich alle paar Jahr nur einmal: du lässest mich doch ausgehen?“ „Hautab! Halbaus!“ antwortete die Maus, „es sind so kuriose Namen, die machen mich so nachdenksam.“ „Da sitzest du daheim in deinem dunkelgrauen Flausrock und deinem langen Haarzopf,“ sprach die Katze, „und fängst Grillen: das kommt davon wenn man bei Tage nicht ausgeht.“ Die Maus räumte während der Abwesenheit der Katze auf und brachte das Haus in Ordnung, die naschhafte Katze aber fraß den Fetttopf rein aus. „Wenn erst alles aufgezehrt ist, so hat man Ruhe“ sagte sie zu sich selbst und kam satt und dick erst in der Nacht nach Haus. Die Maus fragte gleich nach dem Namen, den das dritte Kind bekommen hätte. „Er wird dir wohl auch nicht gefallen,“ sagte die Katze, „er heißt Ganzaus.“ „Ganzaus!“ rief die Maus, „das ist der allerbedenklichste Namen, gedruckt ist er mir noch nicht vorgekommen. Ganzaus! was soll das bedeuten?“ Sie schüttelte den Kopf, rollte sich zusammen und legte sich schlafen. Von nun an wollte niemand mehr die Katze zu Gevatter bitten, als aber der Winter herangekommen und draußen nichts mehr zu finden war, gedachte die Maus ihres Vorraths und sprach „komm, Katze, wir wollen zu unserm Fetttopfe gehen, den wir uns aufgespart haben, der wird uns schmecken.“</p>
+
+<p data-start="255.00" data-end="367.00">「我又得去做見證人了，這次的小孩全身都是黑的，只有爪子是白的，整個身體上沒有一根白毛，這種情況幾年才遇到一次，你會讓我出去吧？」 「舔皮！吃了一半！」老鼠回答，「這些名字真奇怪，讓我很困惑。」 「你整天呆在家裡，穿著你的灰色羊毛長袍和長髮辮，」貓說，「就只會胡思亂想：這就是你白天不出去的結果。」在貓不在的時候，老鼠把家裡整理了一遍，但貪吃的貓卻把油脂罐吃得一乾二淨。「等一切都吃光了，就可以安靜下來了。」牠自言自語地說，直到深夜才滿足地回到家裡。老鼠馬上問第三個小孩取了什麼名字。「你肯定也不會喜歡，」貓說，「他叫全部吃光。」 「全部吃光！」老鼠喊道，「這是最奇怪的名字，我從來沒見過這樣的名字。全部吃光！這是什麼意思？」 她搖了搖頭，蜷縮起來睡著了。從此以後，再也沒有人邀請貓去做見證人，但當冬天來臨，外面再也找不到食物時，老鼠想起了她的儲備，對貓說：「來吧，貓，我們去看看我們保存的油脂罐吧，那會很好吃的。」</p>
+
+<p data-start="368.00" data-end="426.00">„Ja wohl,“ antwortete die Katze, „der wird dir schmecken als wenn du deine feine Zunge zum Fenster hinaus streckst.“ Sie machten sich auf den Weg, und als sie anlangten, stand zwar der Fetttopf noch an seinem Platz, er war aber leer. „Ach,“ sagte die Maus, „jetzt merke ich was geschehen ist, jetzt kommts an den Tag, du bist mir die wahre Freundin! aufgefressen hast du alles, wie du zu Gevatter gestanden hast: erst Haut ab, dann halb aus, dann ...“ „Willst du schweigen“ rief die Katze, „noch ein Wort, und ich fresse dich auf.“ „Ganz aus“ hatte die arme Maus schon auf der Zunge, kaum war es heraus, so that die Katze einen Satz nach ihr, packte sie und schluckte sie hinunter. Siehst du, so gehts in der Welt.</p>
+
+<p data-start="368.00" data-end="426.00">「好啊，」貓回答，「那會像你把你的細舌頭伸出窗外一樣好吃。」他們出發了，當他們到達時，油脂罐還在原來的位置，但已經空了。「啊，」老鼠說，「現在我明白發生了什麼事，真相大白了，你是我真正的朋友！你把所有的東西都吃光了，當你做見證人時：先是舔皮，然後吃了一半，然後…」 「你給我閉嘴！」貓喊道，「再多說一句話，我就把你吃掉。」 「全部吃光」這個名字幾乎已經到了老鼠嘴邊，她剛說出口，貓就跳起來撲向她，抓住她並把她吞了下去。你看，這就是這個世界的運作方式。</p>
+
