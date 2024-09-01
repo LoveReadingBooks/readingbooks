@@ -131,7 +131,26 @@
             margin-left: 1.6%;
         }
 
-        #GrimmButton {
+        #secondControl {
+            border: none;
+            border-radius: 50%;
+            background-color: rgb(136, 136, 235);
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+
+            /* 靠近最左边 */
+            margin-left: 0;
+
+            /* padding-top 调整位置 */
+            margin-top: 5px; /* 根据需要调整数值 */
+
+            /* Optional: 移除 margin-right */
+            margin-right: 0;
+        }
+
+
+        #GrimmsButton {
             font-size: 16px;
             border: none;
             background-color: #e4e7fe;
@@ -262,11 +281,12 @@
                 <label for="fileInput" class="custom-file-label">Choose Text</label>
             </div>
             <div class="hidden-controls" id="hiddenControls">
-                <button id="hiddenButton">hidden Control Buttons</button>
+                <button id="hiddenButton">hidden Control</button>
             </div>
             <div class="show-controls" id="Controls">
-                <button id="GrimmButton" style="display: none;">Grimm</button>
-                <button id="showButton" style="display: none;">Show Control Buttons</button>
+                <button id="secondControl" style="display: none;"></button>
+                <button id="GrimmsButton" style="display: none;">Grimm</button>
+                <button id="showButton" style="display: none;">Show Control</button>
                 
             </div>
             <audio id="audioPlayer" controls style="display: none;"></audio>
@@ -586,7 +606,8 @@
             //document.getElementById('hiddenButton').classList.remove('hidden');
             
             document.getElementById('hiddenButton').style.display = 'block';
-            document.getElementById('GrimmButton').style.display = 'none'; // 顯示 OZ 按鈕
+            document.getElementById('secondControl').style.display = 'none';
+            document.getElementById('GrimmsButton').style.display = 'none'; // 顯示 OZ 按鈕
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
             document.getElementById('progressContainer').style.display = 'none';
@@ -616,14 +637,28 @@
             document.getElementById('showButton').style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
-            document.getElementById('GrimmButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('GrimmsButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('secondControl').style.display = 'block';
             //document.getElementById('progressContainer').style.display = 'flex';
 
             // Restart the inactivity timer
             resetInactivityTimer();
         });
 
-        document.getElementById('GrimmButton').addEventListener('click', function() {
+        document.getElementById('secondControl').addEventListener('click', function() {
+            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('GrimmsButton').style.display === 'none') {
+                // 如果两个按钮都是隐藏的，则显示它们
+                document.getElementById('showButton').style.display = 'block';
+                document.getElementById('GrimmsButton').style.display = 'block';
+            } else {
+                // 如果其中一个或两个按钮是显示的，则隐藏它们
+                document.getElementById('showButton').style.display = 'none';
+                document.getElementById('GrimmsButton').style.display = 'none';
+            }
+        });
+
+
+        document.getElementById('GrimmsButton').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
             //audioPlayer.pause(); // 停止播放
             //audioPlayer.src = '';
@@ -799,7 +834,8 @@
             document.getElementById('hiddenButton').style.display = 'none';
             showControlsButton.style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
-            document.getElementById('GrimmButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('GrimmsButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('secondControl').style.display = 'block';
         }
 
         // Reset the inactivity timer
