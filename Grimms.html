@@ -261,6 +261,12 @@
             height: 30px;
         }
 
+        img {
+            display: block;
+            margin: 2px 0;
+            max-width: 100%;
+            height: auto;
+        }
         
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
@@ -340,9 +346,21 @@
                             ).join('');
                             addSubtitleClickListeners();
                         } else if (file.name.endsWith('.txt') && isFormattedSubtitle) {
+                            const lines = content.split('\n');
+
+                            // 处理第一行作为图片 HTML 标签
+                            const firstLine = lines[0].trim();
+                            if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
+                                subtitlesDisplay.innerHTML = firstLine; // 显示图片
+                                const subtitleContent = lines.slice(1).join('\n');
+                                subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
+                            }
+
+                            // 从第二行开始获取字幕内容
                             subtitles = parseTxt(content); // 解析txt格式的字幕
+
                             // Display parsed subtitles and add click event listeners
-                            subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                            subtitlesDisplay.innerHTML += subtitles.map(sub => 
                                 `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
                             ).join('');
                             addSubtitleClickListeners();
