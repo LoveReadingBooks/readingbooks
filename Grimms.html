@@ -679,8 +679,7 @@
 
         document.getElementById('GrimmsButton').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
-            //audioPlayer.pause(); // 停止播放
-            //audioPlayer.src = '';
+            // 停止播放
             audioPlayer.pause();
             document.getElementById('playcontrolButton').textContent = 'Pause';
             const container = document.getElementById('fileContent');
@@ -702,8 +701,7 @@
                 }
             };
 
-            //for (let i = 1; i <= Object.keys(chapters).length; i++) {
-                for (let i = 1; i <= Object.keys(chapters).length; i++) {
+            for (let i = 1; i <= Object.keys(chapters).length; i++) {
                 const button = document.createElement('button');
                 button.textContent = `Thema ${i}`;
                 button.id = `chapterButton${i}`;
@@ -717,9 +715,20 @@
                         // 加載字幕
                         fetch(textUrl)
                             .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                            .then(content => {
+                                const lines = content.split('\n');
+
+                                // 处理第一行作为图片 HTML 标签
+                                const firstLine = lines[0].trim();
+                                if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
+                                    subtitlesDisplay.innerHTML = firstLine; // 显示图片
+                                    const subtitleContent = lines.slice(1).join('\n');
+                                    subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
+                                } else {
+                                    subtitles = parseTxt(content); // 解析txt格式的字幕
+                                } 
+                                // Display parsed subtitles and add click event listeners
+                                subtitlesDisplay.innerHTML += subtitles.map(sub => 
                                     `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
                                 ).join('');
                                 addSubtitleClickListeners();
@@ -728,11 +737,9 @@
                         // 播放音頻
                         audioPlayer.src = audioUrl;
                         audioPlayer.play();
-                        //document.getElementById('audioUrlInput').value = audioUrl;
                         document.getElementById('progressContainer').style.display = 'flex';
                     });
                 }
-                
             }
         });
 
