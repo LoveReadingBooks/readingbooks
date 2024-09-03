@@ -1,3 +1,4 @@
+<img src="Grimms/001.jpeg" alt="Test Image">
 <p data-start="0.50" data-end="3.40">Der Froschkönig oder der eiserne Heinrich</p>
 <p data-start="0.50" data-end="3.40">青蛙王子或忠誠的海因里希</p>
 <p data-start="5.58" data-end="46.92">In den alten Zeiten, wo das Wünschen noch geholfen hat, lebte ein König, dessen Töchter waren alle schön, aber die jüngste war so schön, daß die Sonne selber, die doch so vieles gesehen hat, sich verwunderte, sooft sie ihr ins Gesicht schien. Nahe bei dem Schlosse des Königs lag ein großer dunkler Wald, und in dem Walde unter einer alten Linde war ein Brunnen; wenn nun der Tag sehr heiß war, so ging das Königskind hinaus in den Wald und setzte sich an den Rand des kühlen Brunnens: und wenn sie Langeweile hatte, so nahm sie eine goldene Kugel, warf sie in die Höhe und fing sie wieder; und das war ihr liebstes Spielwerk.</p>
