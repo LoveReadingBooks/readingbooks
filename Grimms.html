@@ -710,6 +710,7 @@
 
                 if (chapters[i]) {
                     button.addEventListener('click', function() {
+                        container.innerHTML = '';
                         const { textUrl, audioUrl } = chapters[i];
                         
                         // 加載字幕
