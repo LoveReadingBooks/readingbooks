@@ -715,8 +715,8 @@
                         // 加載字幕
                         fetch(textUrl)
                             .then(response => response.text())
-                            .then(content => {
-                                const lines = content.split('\n');
+                            .then(text => {
+                                const lines = text.split('\n');
 
                                 // 处理第一行作为图片 HTML 标签
                                 const firstLine = lines[0].trim();
@@ -726,7 +726,7 @@
                                     subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
                                 }
 
-                                subtitles = parseTxt(content); // 解析txt格式的字幕
+                                subtitles = parseTxt(text); // 解析txt格式的字幕
 
                                 // Display parsed subtitles and add click event listeners
                                 subtitlesDisplay.innerHTML += subtitles.map(sub => 
