@@ -353,8 +353,10 @@
                             if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
                                 subtitlesDisplay.innerHTML = firstLine; // 显示图片
                                 const subtitleContent = lines.slice(1).join('\n');
+                                // 从第二行开始获取字幕内容
                                 subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
                             }
+
                             
                             subtitles = parseTxt(content); // 解析txt格式的字幕
 
@@ -677,8 +679,7 @@
 
         document.getElementById('GrimmsButton').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
-            //audioPlayer.pause(); // 停止播放
-            //audioPlayer.src = '';
+            // 停止播放
             audioPlayer.pause();
             document.getElementById('playcontrolButton').textContent = 'Pause';
             const container = document.getElementById('fileContent');
@@ -700,8 +701,7 @@
                 }
             };
 
-            //for (let i = 1; i <= Object.keys(chapters).length; i++) {
-                for (let i = 1; i <= Object.keys(chapters).length; i++) {
+            for (let i = 1; i <= Object.keys(chapters).length; i++) {
                 const button = document.createElement('button');
                 button.textContent = `Thema ${i}`;
                 button.id = `chapterButton${i}`;
@@ -715,9 +715,21 @@
                         // 加載字幕
                         fetch(textUrl)
                             .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                            .then(content => {
+                                const lines = content.split('\n');
+
+                                // 处理第一行作为图片 HTML 标签
+                                const firstLine = lines[0].trim();
+                                if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
+                                    subtitlesDisplay.innerHTML = firstLine; // 显示图片
+                                    const subtitleContent = lines.slice(1).join('\n');
+                                    subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
+                                }
+
+                                subtitles = parseTxt(content); // 解析txt格式的字幕
+
+                                // Display parsed subtitles and add click event listeners
+                                subtitlesDisplay.innerHTML += subtitles.map(sub => 
                                     `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
                                 ).join('');
                                 addSubtitleClickListeners();
@@ -726,69 +738,9 @@
                         // 播放音頻
                         audioPlayer.src = audioUrl;
                         audioPlayer.play();
-                        //document.getElementById('audioUrlInput').value = audioUrl;
                         document.getElementById('progressContainer').style.display = 'flex';
                     });
                 }
-
-                /*if (i === 22) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f81fe35362c34534afdcb73c17023663.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }
-                if (i === 23) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_9f6d6ec323a643c8ad3019cdb07dfc88.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }
-                if (i === 24) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_3c2f0b0dbed74866b423d7fcbd76a260.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }*/
-                
             }
         });
 
