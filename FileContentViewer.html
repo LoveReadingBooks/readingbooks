@@ -131,7 +131,8 @@
             margin-left: 1.6%;
         }
 
-        #ozButton {
+        #ozButton,
+        #winnieButton {
             font-size: 16px;
             border: none;
             background-color: #e4e7fe;
@@ -268,11 +269,12 @@
                 <label for="fileInput" class="custom-file-label">Choose Text</label>
             </div>
             <div class="hidden-controls" id="hiddenControls">
-                <button id="hiddenButton">hidden Control Buttons</button>
+                <button id="hiddenButton">hidden Control</button>
             </div>
             <div class="show-controls" id="Controls">
                 <button id="ozButton" style="display: none;">OZ</button>
-                <button id="showButton" style="display: none;">Show Control Buttons</button>
+                <button id="winnieButton" style="display: none;">Winnie</button>
+                <button id="showButton" style="display: none;">Show Control</button>
                 
             </div>
             <audio id="audioPlayer" controls style="display: none;"></audio>
@@ -334,9 +336,11 @@
                                 subtitlesDisplay.innerHTML = firstLine; // 显示图片
                                 const subtitleContent = lines.slice(1).join('\n');
                                 subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
-                            }
+                            } else {
+                                subtitles = parseTxt(content); // 解析txt格式的字幕
+                            } 
+
                             
-                            subtitles = parseTxt(content); // 解析txt格式的字幕
 
                             // Display parsed subtitles and add click event listeners
                             subtitlesDisplay.innerHTML += subtitles.map(sub => 
@@ -604,7 +608,8 @@
             //document.getElementById('hiddenButton').classList.remove('hidden');
             
             document.getElementById('hiddenButton').style.display = 'block';
-            document.getElementById('ozButton').style.display = 'none'; // 顯示 OZ 按鈕
+            document.getElementById('ozButton').style.display = 'none';
+            document.getElementById('winnieButton').style.display = 'none';
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
             document.getElementById('progressContainer').style.display = 'none';
@@ -634,7 +639,8 @@
             document.getElementById('showButton').style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
-            document.getElementById('ozButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('ozButton').style.display = 'block';
+            document.getElementById('winnieButton').style.display = 'block';
             //document.getElementById('progressContainer').style.display = 'flex';
 
             // Restart the inactivity timer
@@ -775,88 +781,108 @@
                         // 播放音頻
                         audioPlayer.src = audioUrl;
                         audioPlayer.play();
-                        //document.getElementById('audioUrlInput').value = audioUrl;
                         document.getElementById('progressContainer').style.display = 'flex';
                     });
                 }
-
-                /*if (i === 22) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f81fe35362c34534afdcb73c17023663.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }
-                if (i === 23) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_9f6d6ec323a643c8ad3019cdb07dfc88.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }
-                if (i === 24) {
-                    button.addEventListener('click', function() {
-                        fetch('https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_3c2f0b0dbed74866b423d7fcbd76a260.txt')
-                            .then(response => response.text())
-                            .then(text => {
-                                subtitles = parseTxt(text);
-                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
-                            });
-
-                        const audioUrl = 'https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3';
-                        audioPlayer.src = audioUrl;
-                        audioPlayer.play();
-                        document.getElementById('audioUrlInput').value = audioUrl;
-                        document.getElementById('progressContainer').style.display = 'flex';
-                    });
-                }*/
-                
             }
         });
+        
 
+        document.getElementById('winnieButton').addEventListener('click', function() {
+            document.getElementById('progressContainer').style.display = 'none';
+            //audioPlayer.pause(); // 停止播放
+            //audioPlayer.src = '';
+            audioPlayer.pause();
+            document.getElementById('playcontrolButton').textContent = 'Pause';
+            const container = document.getElementById('fileContent');
+            container.innerHTML = ''; // 清空容器以防止重複生成按鈕
 
-        /*document.getElementById('fileContent').addEventListener('click', function(event) {
-            if (event.target && event.target.id === 'chapterButton23') {
-                fetch('23.txt')
-                    .then(response => response.text())
-                    .then(text => {
-                        document.getElementById('fileUrlInput').value = '23.txt';
-                        document.getElementById('fileContent').innerText = text;
+            // 章節對應的音頻和字幕URL
+            const chapters = {
+                0: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e943ee8ad2f74916b24a0bb0d5c1318f.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_0abedbf437e045739c09531bdf5878fd.mp3'
+                },
+                1: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_78a7241150ac439ab8f358e9e07b497d.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_1c82be051ad349e18cbad0515e9a9b70.mp3'
+                },
+                2: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_2c1f599d025d4bd5becdcdc8da8b1f22.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_989f7564f53d487ba1afd12fe4a12610.mp3'
+                },
+                3: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_337366f2066c41998275da298dd308bc.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_3590b9f0529247bc83357563119c2cb0.mp3'
+                },
+                4: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d88979778b464f9ebf8d3e8c3286cdb9.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_1eead33d90e34e679b59f5b53380d5cb.mp3'
+                },
+                5: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_25bfaad7a08d409c9acb502aec7d281c.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_1b90886a370e4df8b798ce59327981bc.mp3'
+                },
+                6: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f2f81bf6a8784661baad3245c6ba1ea2.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_c78eeaef852e4fcf99101bc32392d628.mp3'  
+                },
+                7: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b182ee02d9ef4caab9b759da53d27ae4.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_8a9efe08cdbe45af8ee1eaa5ac5c7fa4.mp3'
+                },
+                8: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d2909545f1c247638dd8bd7bd916b13b.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_914159c93aa546939f35a5760bb2c0d1.mp3'
+                },
+                9: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_63e7f73218c64b949a0176a55b51c935.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_0dd20c5e27a84baa9ac3ed1ead9c87ff.mp3'
+                },
+                10: {
+                    textUrl: 'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b7a7f6c1366b47e5afde9be3f53004a9.txt',
+                    audioUrl: 'https://static.wixstatic.com/mp3/67c6c6_9551b4d0011642b2a8110a255598348b.mp3'
+                }
+            };
+
+            for (let i = 0; i <= 10; i++) {
+                const button = document.createElement('button');
+                if(i==0) {
+                    button.textContent = `Introduction`;
+                } else {
+                    button.textContent = `Chapter ${i}`;
+                }
+
+                button.id = `chapterButton${i}`;
+                button.className = 'chapter-button';
+                container.appendChild(button);
+
+                if (chapters[i]) {
+                    button.addEventListener('click', function() {
+                        const { textUrl, audioUrl } = chapters[i];
+                        
+                        // 加載字幕
+                        fetch(textUrl)
+                            .then(response => response.text())
+                            .then(text => {
+                                subtitles = parseTxt(text);
+                                subtitlesDisplay.innerHTML = subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        // 播放音頻
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        document.getElementById('progressContainer').style.display = 'flex';
                     });
-
-                const audioElement = new Audio('https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3');
-                audioElement.play();
-
-                document.getElementById('audioUrlInput').value = 'https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3';
+                }
             }
-        });*/
+        });
+        
+
+
 
         audioPlayer.addEventListener('timeupdate', function() {
             const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
@@ -900,7 +926,8 @@
             document.getElementById('hiddenButton').style.display = 'none';
             showControlsButton.style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
-            document.getElementById('ozButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('ozButton').style.display = 'block';
+            document.getElementById('winnieButton').style.display = 'block';
         }
 
         // Reset the inactivity timer
