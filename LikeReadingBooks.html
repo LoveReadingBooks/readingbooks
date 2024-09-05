@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Reading Books</title>
+    <link rel="icon" type="image/png" href="https://static.wixstatic.com/media/67c6c6_df0f28fc83fb470a81924869f489324d~mv2.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /*background-color: #e0e0e0;*/
+            background-color: #e4e7fe;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            position: fixed;
+            background-color: #e4e7fe;
+            padding: 0px;
+            /*border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+            text-align: center;
+            top: 0px;
+            width: 100%;
+            height: 18%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*border: none;*/
+        }
+
+        .audio-controls, .file-controls {
+            display: flex;
+            margin-top: 0.5%;
+        }
+
+        .all-controls {
+            position: fixed;
+            margin-top: 2%;
+            margin-left: 3%;
+        }
+
+        .audio-controls button,
+        .file-controls button {
+            margin-right: 10px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 100px;
+            height: 20px;
+        }
+
+        .audio-controls input[type="file"],
+        .file-controls input[type="file"] {
+            margin-right: 10px;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            display: none;
+            width: 100px;
+            height: 20px;
+        }
+
+        .custom-audio-label,
+        .custom-file-label {
+            margin-right: 10px;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 120px;
+            height: 20px;
+        }
+
+        .audio-controls button:hover,
+        .file-controls button:hover,
+        .custom-audio-label:hover,
+        .custom-file-label:hover,
+        .show-controls button:hover {
+            background-color: rgb(106, 106, 205);
+        }
+
+        .audio-controls input[type="text"],
+        .file-controls input[type="text"]{
+            margin-right: 10px;
+            font-size: 15px;
+            text-align: center;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            outline: none;
+            color: #ffffff;
+            width: 100px;
+            
+            
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgb(242, 243, 247);
+            opacity: 1; /* Firefox */
+            height: 18px;
+            
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hidden-controls {
+            display: flex;
+            margin-top: 0.5%;
+        }
+
+        .show-controls {
+            display: flex;
+            /* gap: 10px; 可以調整按鈕之間的間距 */
+            
+            margin-top: 0.5%;
+            margin-left: 1.6%;
+        }
+
+        #ozButton,
+        #winnieButton {
+            font-size: 16px;
+            border: none;
+            background-color: #e4e7fe;
+            color: #000000;
+            cursor: pointer;
+            width: 50px;
+            height: 20px;
+            margin-right: 20px;
+        }
+
+        #showButton {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 180px;
+            height: 20px;
+        }
+
+        #playcontrolButton {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 80px;
+            height: 20px;
+            margin-left: 30px;
+
+
+        }
+
+        .hidden-controls button {
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 180px;
+            height: 20px;
+        }
+
+        pre {
+            background-color: #e4e7fe;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: left;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.5;
+            color: #333333;
+        
+            font-size: 28px;
+            margin-top: 22%;
+            margin-left: 2%;
+            margin-right: 2%;
+            overflow-y: auto;
+        }
+
+        #progressContainer {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5%;
+            width: 80%;
+            max-width: 80%; /* 防止超出螢幕 */
+            
+            margin-top: 8%;
+            margin-left: 1.6%;
+        }
+
+        #progressBar {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .subtitle {
+            margin-bottom: 10px;
+            font-size: 22px; /* Adjust as needed */
+            color: #000; /* Ensure visibility */
+            cursor: pointer; /* 新增的樣式 */
+
+            white-space: pre-wrap; /* 自動換行 */
+            word-wrap: break-word; /* 處理長單詞換行 */
+
+
+            /*display: inline; 
+            white-space: nowrap; */
+            
+        }
+
+        .highlight {
+            background-color: rgb(224, 227, 250);
+            font-weight: bold;
+        }
+
+        .chapter-button {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            background-color: rgb(136, 136, 235);
+            color: #ffffff;
+            cursor: pointer;
+            width: 110px;
+            height: 30px;
+        }
+
+        img {
+            display: block;
+            margin: 2px 0;
+            max-width: 100%;
+            height: auto;
+        }
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="all-controls" id="allControls">
+            <div class="audio-controls" id="audioControls">
+                <input type="text" id="audioUrlInput" placeholder="Enter URL">
+                <button id="playButton">Open</button>
+                <input type="file" id="audioFileInput" accept="audio/*">
+                <label for="audioFileInput" class="custom-audio-label">Choose Audio</label>
+            </div>
+            <div class="file-controls" id="fileControls">
+                <input type="text" id="fileUrlInput" placeholder="Enter URL">
+                <button id="openFileButton">Open</button>
+                <input type="file" id="fileInput" accept=".txt, .srt, .pdf">
+                <label for="fileInput" class="custom-file-label">Choose Text</label>
+            </div>
+            <div class="hidden-controls" id="hiddenControls">
+                <button id="hiddenButton">hidden Control</button>
+            </div>
+            <div class="show-controls" id="Controls">
+                <button id="ozButton" style="display: none;">OZ</button>
+                <button id="winnieButton" style="display: none;">Winnie</button>
+                <button id="showButton" style="display: none;">Show Control</button>   
+            </div>
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+            <div id="progressContainer" style="display: none;">
+                <input type="range" id="progressBar" min="0" max="100" value="0">
+                <span id="currentTime" style="display: none;">0:00</span>
+                <button id="playcontrolButton">Pause</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <pre id="fileContent"></pre>
+    <!--<div class="transcript-container" id="fileContent"></div>-->
+    
+    <script>
+        const _0x502438=_0x1f06;(function(_0xbf7a5,_0x5893d8){const _0x3d33f1=_0x1f06,_0x519f21=_0xbf7a5();while(!![]){try{const _0x187e74=parseInt(_0x3d33f1(0x1c0))/0x1+-parseInt(_0x3d33f1(0x17b))/0x2*(parseInt(_0x3d33f1(0x1c9))/0x3)+parseInt(_0x3d33f1(0x1da))/0x4*(-parseInt(_0x3d33f1(0x185))/0x5)+-parseInt(_0x3d33f1(0x15c))/0x6+-parseInt(_0x3d33f1(0x168))/0x7*(parseInt(_0x3d33f1(0x19c))/0x8)+parseInt(_0x3d33f1(0x13d))/0x9*(parseInt(_0x3d33f1(0x1df))/0xa)+parseInt(_0x3d33f1(0x19d))/0xb;if(_0x187e74===_0x5893d8)break;else _0x519f21['push'](_0x519f21['shift']());}catch(_0x2076fc){_0x519f21['push'](_0x519f21['shift']());}}}(_0xb91e,0xc6299));const audioPlayer=document[_0x502438(0x15a)](_0x502438(0x173)),progressBar=document['getElementById']('progressBar'),currentTimeDisplay=document[_0x502438(0x15a)](_0x502438(0x161)),subtitlesDisplay=document[_0x502438(0x15a)](_0x502438(0x1d3));let subtitles=[];document[_0x502438(0x15a)]('fileInput')[_0x502438(0x183)](_0x502438(0x1a1),function(_0xc6a00){const _0x3e8934=_0x502438,_0x33d16c=_0xc6a00[_0x3e8934(0x1d8)][_0x3e8934(0x18a)][0x0];if(_0x33d16c){document['getElementById']('fileControls')['classList'][_0x3e8934(0x197)](_0x3e8934(0x1d5));window[_0x3e8934(0x1e1)](document[_0x3e8934(0x15a)](_0x3e8934(0x162)))['display']===_0x3e8934(0x1ba)&&window[_0x3e8934(0x1e1)](document[_0x3e8934(0x15a)](_0x3e8934(0x1cd)))[_0x3e8934(0x1a2)]===_0x3e8934(0x1ba)&&(document[_0x3e8934(0x15a)]('hiddenButton')[_0x3e8934(0x1a4)]['display']=_0x3e8934(0x1ba));document['getElementById']('showButton')['style'][_0x3e8934(0x1a2)]=_0x3e8934(0x1cb);if(_0x33d16c[_0x3e8934(0x1a6)][_0x3e8934(0x180)](_0x3e8934(0x174)))displayPdf(_0x33d16c);else{const _0x195d51=new FileReader();_0x195d51[_0x3e8934(0x1cc)]=function(_0x3601e4){const _0x1f3d2b=_0x3e8934,_0x4c4824=_0x3601e4['target'][_0x1f3d2b(0x1aa)],_0x2b2067=/<p data-start="(\d+\.?\d*)" data-end="(\d+\.?\d*)">/['test'](_0x4c4824);if(_0x33d16c[_0x1f3d2b(0x1a6)][_0x1f3d2b(0x180)]('.srt'))subtitles=parseSrt(_0x4c4824),subtitlesDisplay['innerHTML']=subtitles[_0x1f3d2b(0x188)](_0x11ed4d=>_0x1f3d2b(0x1b7)+_0x11ed4d['id']+'\x22\x20class=\x22subtitle\x22\x20data-start=\x22'+_0x11ed4d[_0x1f3d2b(0x1c3)]+'\x22>'+_0x11ed4d[_0x1f3d2b(0x149)][_0x1f3d2b(0x151)](/\n/g,_0x1f3d2b(0x1db))+_0x1f3d2b(0x19b))['join'](''),addSubtitleClickListeners();else{if(_0x33d16c[_0x1f3d2b(0x1a6)][_0x1f3d2b(0x180)](_0x1f3d2b(0x176))&&_0x2b2067){const _0x573e9a=_0x4c4824['split']('\x0a'),_0x1bdaa4=_0x573e9a[0x0][_0x1f3d2b(0x18c)]();if(_0x1bdaa4[_0x1f3d2b(0x1d4)](_0x1f3d2b(0x164))&&_0x1bdaa4['endsWith']('>')){subtitlesDisplay['innerHTML']=_0x1bdaa4;const _0x35d08b=_0x573e9a[_0x1f3d2b(0x139)](0x1)[_0x1f3d2b(0x199)]('\x0a');subtitles=parseTxt(_0x35d08b);}else subtitles=parseTxt(_0x4c4824);subtitlesDisplay[_0x1f3d2b(0x17c)]+=subtitles[_0x1f3d2b(0x188)](_0x2be00a=>_0x1f3d2b(0x1b7)+_0x2be00a['id']+_0x1f3d2b(0x190)+_0x2be00a[_0x1f3d2b(0x1c3)]+_0x1f3d2b(0x142)+_0x2be00a[_0x1f3d2b(0x163)]+_0x1f3d2b(0x1d9)+_0x2be00a[_0x1f3d2b(0x149)][_0x1f3d2b(0x151)](/\n/g,_0x1f3d2b(0x1db))+_0x1f3d2b(0x19b))['join'](''),addSubtitleClickListeners();}else _0x33d16c[_0x1f3d2b(0x1a6)][_0x1f3d2b(0x180)]('.txt')&&(subtitlesDisplay[_0x1f3d2b(0x1e0)]=_0x4c4824);}},_0x195d51[_0x3e8934(0x16f)](_0x33d16c);}}}),document[_0x502438(0x15a)]('openFileButton')[_0x502438(0x183)](_0x502438(0x1ad),function(){const _0x25b3b8=_0x502438,_0x147aa1=document[_0x25b3b8(0x15a)](_0x25b3b8(0x19e))['value'];_0x147aa1?(fetch(_0x147aa1)[_0x25b3b8(0x1ab)](_0x6ab219=>_0x6ab219[_0x25b3b8(0x149)]())['then'](_0x431752=>{const _0x4c844c=_0x25b3b8;subtitles=parseTxt(_0x431752),subtitlesDisplay[_0x4c844c(0x17c)]=subtitles['map'](_0x428f21=>_0x4c844c(0x1b7)+_0x428f21['id']+_0x4c844c(0x190)+_0x428f21[_0x4c844c(0x1c3)]+'\x22\x20style=\x22margin-left:\x20'+_0x428f21[_0x4c844c(0x163)]+';\x22>'+_0x428f21[_0x4c844c(0x149)][_0x4c844c(0x151)](/\n/g,_0x4c844c(0x1db))+_0x4c844c(0x19b))['join'](''),addSubtitleClickListeners();})[_0x25b3b8(0x178)](_0x2a03f4=>{const _0x43ad7c=_0x25b3b8;alert(_0x43ad7c(0x169)+_0x2a03f4);}),document[_0x25b3b8(0x15a)](_0x25b3b8(0x162))[_0x25b3b8(0x13a)][_0x25b3b8(0x197)](_0x25b3b8(0x1d5)),window[_0x25b3b8(0x1e1)](document['getElementById'](_0x25b3b8(0x162)))[_0x25b3b8(0x1a2)]==='none'&&window[_0x25b3b8(0x1e1)](document['getElementById']('audioControls'))[_0x25b3b8(0x1a2)]===_0x25b3b8(0x1ba)&&(document[_0x25b3b8(0x15a)](_0x25b3b8(0x153))['style'][_0x25b3b8(0x1a2)]=_0x25b3b8(0x1ba)),document['getElementById'](_0x25b3b8(0x1b6))['style'][_0x25b3b8(0x1a2)]=_0x25b3b8(0x1cb)):alert(_0x25b3b8(0x15f));});function displayPdf(_0x21800e){const _0x45b241=_0x502438,_0x6898ea=new FileReader();_0x6898ea['onload']=function(){const _0x131a45=_0x1f06,_0xf6af86=new Uint8Array(this[_0x131a45(0x1aa)]);pdfjsLib[_0x131a45(0x181)](_0xf6af86)[_0x131a45(0x1a5)]['then'](function(_0x46349b){const _0x437c80=_0x131a45,_0x52b51d=document[_0x437c80(0x15a)]('fileContent');_0x52b51d['innerHTML']='';const _0x260de8=_0x52b51d['clientWidth'];for(let _0x5223e0=0x1;_0x5223e0<=_0x46349b[_0x437c80(0x15b)];_0x5223e0++){_0x46349b[_0x437c80(0x17f)](_0x5223e0)[_0x437c80(0x1ab)](function(_0x3175bc){const _0x54775d=_0x437c80,_0x465cc9=_0x3175bc[_0x54775d(0x16c)]({'scale':0x1}),_0x5cc68e=_0x260de8/_0x465cc9[_0x54775d(0x191)],_0x7cb8d2=_0x3175bc['getViewport']({'scale':_0x5cc68e}),_0x1cec3f=document['createElement']('canvas'),_0x7cc810=_0x1cec3f[_0x54775d(0x14d)]('2d');_0x1cec3f[_0x54775d(0x17e)]=_0x7cb8d2['height'],_0x1cec3f[_0x54775d(0x191)]=_0x7cb8d2[_0x54775d(0x191)];const _0x51893e=document[_0x54775d(0x187)]('div');_0x51893e[_0x54775d(0x1a4)][_0x54775d(0x1a2)]='flex',_0x51893e[_0x54775d(0x1a4)][_0x54775d(0x184)]='center',_0x51893e[_0x54775d(0x1a4)][_0x54775d(0x189)]='3px';const _0x44d124={'canvasContext':_0x7cc810,'viewport':_0x7cb8d2};_0x3175bc[_0x54775d(0x1d1)](_0x44d124)[_0x54775d(0x1a5)]['then'](function(){const _0x56b358=_0x54775d;_0x51893e['appendChild'](_0x1cec3f),_0x52b51d[_0x56b358(0x146)](_0x51893e);});});}});},_0x6898ea[_0x45b241(0x16b)](_0x21800e);}function addSubtitleClickListeners(){const _0x465d29=_0x502438,_0x5775f8=document['querySelectorAll'](_0x465d29(0x159));_0x5775f8['forEach'](_0x5aa958=>{const _0x2a9978=_0x465d29;_0x5aa958[_0x2a9978(0x183)]('click',function(){const _0x14375f=_0x2a9978,_0x4fa9b9=parseFloat(this[_0x14375f(0x150)](_0x14375f(0x166)));!isNaN(_0x4fa9b9)&&(audioPlayer[_0x14375f(0x161)]=_0x4fa9b9+0.01);});});}function parseTxt(_0xbbb498){const _0x224643=_0x502438,_0x5c4f6e=/<p\s+data-start="(\d+\.?\d*)"\s+data-end="(\d+\.?\d*)"(?:\s+style="[^"]*?(\d+\.?\d*)[^"]*")?>\s*([\s\S]*?)<\/p>/g;let _0x51e364;const _0x252830=[];let _0x52a4e9=0x0;while((_0x51e364=_0x5c4f6e['exec'](_0xbbb498))!==null){const _0x451418=_0x51e364[0x3]?parseFloat(_0x51e364[0x3]):null,_0x5248a9=_0x51e364[0x4][_0x224643(0x151)](/<\/?[^>]+>/g,'')[_0x224643(0x18c)]();_0x252830[_0x224643(0x1a7)]({'id':_0x52a4e9++,'start':parseFloat(_0x51e364[0x1]),'end':parseFloat(_0x51e364[0x2]),'marginLeft':_0x51e364[0x3],'text':_0x5248a9});}return _0x252830;}function _0xb91e(){const _0x40df2f=['getViewport','fileInput','https://static.wixstatic.com/mp3/67c6c6_1e73444ab05646bcad0bc555fa7de24c.mp3','readAsText','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_ae5faf1e78064a77b4f41f8da0a04c52.txt','https://static.wixstatic.com/mp3/67c6c6_9551b4d0011642b2a8110a255598348b.mp3','playcontrolButton','audioPlayer','.pdf','Play','.txt','ozButton','catch','forEach','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_760eca690a26411e84658c81db0945e0.txt','12UdSUad','innerHTML','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f2f81bf6a8784661baad3245c6ba1ea2.txt','height','getPage','endsWith','getDocument','keydown','addEventListener','justifyContent','1810IVSSKS','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b9e5384788c84c94abb4b52913216f98.txt','createElement','map','marginBottom','files','scrollIntoView','trim','https://static.wixstatic.com/mp3/67c6c6_8a9efe08cdbe45af8ee1eaa5ac5c7fa4.mp3','button','floor','\x22\x20class=\x22subtitle\x22\x20data-start=\x22','width','https://static.wixstatic.com/mp3/67c6c6_3590b9f0529247bc83357563119c2cb0.mp3','https://static.wixstatic.com/mp3/67c6c6_eece5669a50340f89e57b8d402e33d3e.mp3','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d7a7e76749714029904abfca7380f7f0.txt','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_337366f2066c41998275da298dd308bc.txt','src','add','https://static.wixstatic.com/mp3/67c6c6_4331cddd0fe9410fb7d50c81f115865c.mp3','join','play','</div>','4016hpZTdB','6190899nBfvQJ','fileUrlInput','exec','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_c443befd40004223bdf7c0c19374bbc2.txt','change','display','https://static.wixstatic.com/mp3/67c6c6_989f7564f53d487ba1afd12fe4a12610.mp3','style','promise','name','push','https://static.wixstatic.com/mp3/67c6c6_ee06611c6e6645f99ff48151704b850b.mp3','paused','result','then','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_855a7bcad9084b08a7e09b8c62f90260.txt','click','Space','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_ce7f795d09f44abcb198c864abb9b157.txt','split','https://static.wixstatic.com/mp3/67c6c6_5661cf819a6d434caf5c63d36b08964a.mp3','Enter','chapterButton','https://static.wixstatic.com/mp3/67c6c6_28a992bf7a12494ba3e6b3cdaa799782.mp3','winnieButton','showButton','<div\x20id=\x22subtitle-','https://static.wixstatic.com/mp3/67c6c6_b52bfc2375ba492d8884594b2e8c5749.mp3','value','none','code','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_892e81f0ef2b4ce1b5d1c1b826c0541a.txt','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_423eea47e37b462794fc7b76771f714d.txt','pause','openFileButton','1493415GyCmID','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_25bfaad7a08d409c9acb502aec7d281c.txt','playButton','start','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_bf33acbf906f49f4b37f52712f2ea9ef.txt','Pause','https://static.wixstatic.com/mp3/67c6c6_d6b22edc11084878a936e0473dd4a9b4.mp3','querySelectorAll','https://static.wixstatic.com/mp3/67c6c6_7b4c97d37d42484cba0d11fa8ee845ea.mp3','809925bjGEib','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_7625be0d1b6a4214ad82418f24ce9a95.txt','block','onload','audioControls','subtitle-','https://static.wixstatic.com/mp3/67c6c6_aa9edaf0e5384708b5022a2c7c63dc96.mp3','end','render','remove','fileContent','startsWith','hidden','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_6e9b53c9463a47f5905bf6cf894ab921.txt','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_a256a2c5834f486a8915076c2f965d2e.txt','target',';\x22>','5096ljxTci','<br>','flex','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_29428a52d41840699a0c2bca349964a0.txt','https://static.wixstatic.com/mp3/67c6c6_1eead33d90e34e679b59f5b53380d5cb.mp3','15745790AdEEwR','textContent','getComputedStyle','https://static.wixstatic.com/mp3/67c6c6_51c2f4d84fa2410ab66138f88b25e94d.mp3','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e943ee8ad2f74916b24a0bb0d5c1318f.txt','slice','classList','https://static.wixstatic.com/mp3/67c6c6_94f745fc40cb483a882bc83f50934006.mp3','https://static.wixstatic.com/mp3/67c6c6_9d255837d3b84ae4be7ceab81f2c3ebe.mp3','9KEuOJG','smooth','https://static.wixstatic.com/mp3/67c6c6_322ab8cf9f9d4cc38f4e3004877e4024.mp3','className','https://static.wixstatic.com/mp3/67c6c6_c268c4481710478989a7e8b3135b4839.mp3','\x22\x20style=\x22margin-left:\x20','https://static.wixstatic.com/mp3/67c6c6_8a8c9c0edc5d45a2876719b1797ad022.mp3','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b182ee02d9ef4caab9b759da53d27ae4.txt','input','appendChild','Chapter\x20','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_63e7f73218c64b949a0176a55b51c935.txt','text','timeupdate','https://static.wixstatic.com/mp3/67c6c6_fe7204fba334477b9ae5b6ca062cdd32.mp3','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e1eff23eedf74ae5bffebc2b9b9abb37.txt','getContext','duration','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_bb14c7511bb64935b475fc9a43b664c9.txt','getAttribute','replace','audioUrlInput','hiddenButton','progressContainer','https://static.wixstatic.com/mp3/67c6c6_1c82be051ad349e18cbad0515e9a9b70.mp3','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_2c1f599d025d4bd5becdcdc8da8b1f22.txt','https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_78a7241150ac439ab8f358e9e07b497d.txt','audioFileInput','.subtitle','getElementById','numPages','1311132YpvLxM','https://static.wixstatic.com/mp3/67c6c6_914159c93aa546939f35a5760bb2c0d1.mp3','chapter-button','Please\x20enter\x20a\x20valid\x20file\x20URL.','highlight','currentTime','fileControls','marginLeft','<img','https://static.wixstatic.com/mp3/67c6c6_d2f4d67225654ad895985b4a51c92143.mp3','data-start','https://static.wixstatic.com/mp3/67c6c6_15bcbec3e2c44f7997487d4dc8257829.mp3','7245qJAWCK','Error\x20loading\x20file:\x20','https://static.wixstatic.com/mp3/67c6c6_0abedbf437e045739c09531bdf5878fd.mp3','readAsArrayBuffer'];_0xb91e=function(){return _0x40df2f;};return _0xb91e();}function _0x1f06(_0x5b9035,_0x39c241){const _0xb91e57=_0xb91e();return _0x1f06=function(_0x1f0677,_0x4e243a){_0x1f0677=_0x1f0677-0x137;let _0x36608c=_0xb91e57[_0x1f0677];return _0x36608c;},_0x1f06(_0x5b9035,_0x39c241);}audioPlayer['addEventListener'](_0x502438(0x14a),function(){const _0x5afca9=_0x502438,_0x19b5e6=audioPlayer[_0x5afca9(0x161)],_0x57f870=_0x19b5e6/audioPlayer[_0x5afca9(0x14e)]*0x64;progressBar[_0x5afca9(0x1b9)]=_0x57f870;const _0x20ec7d=Math['floor'](_0x19b5e6/0x3c),_0x70030f=Math[_0x5afca9(0x18f)](_0x19b5e6%0x3c);currentTimeDisplay[_0x5afca9(0x1e0)]=_0x20ec7d+':'+(_0x70030f<0xa?'0':'')+_0x70030f;const _0x189836=subtitlesDisplay[_0x5afca9(0x1c7)](_0x5afca9(0x159));_0x189836[_0x5afca9(0x179)](_0x1a7bba=>_0x1a7bba[_0x5afca9(0x13a)][_0x5afca9(0x1d2)](_0x5afca9(0x160)));let _0x3e4827=![];subtitles['forEach'](_0x447948=>{const _0x1562d5=_0x5afca9;if(_0x19b5e6>=_0x447948['start']&&_0x19b5e6<=_0x447948[_0x1562d5(0x1d0)]&&!_0x3e4827){const _0x569f42=document[_0x1562d5(0x15a)](_0x1562d5(0x1ce)+_0x447948['id']);_0x569f42&&(_0x569f42[_0x1562d5(0x13a)][_0x1562d5(0x197)]('highlight'),_0x569f42[_0x1562d5(0x18b)]({'behavior':_0x1562d5(0x13e),'block':'center'}),window['scrollBy'](0x0,-window['innerHeight']*0.28),_0x3e4827=!![]);}});});function parseSrt(_0x29c907){const _0x18d0a4=_0x502438,_0x2e5436=/(\d+)\s*\n(\d{2}:\d{2}:\d{2},\d{3})\s*-->\s*(\d{2}:\d{2}:\d{2},\d{3})\s*\n([\s\S]*?)(?=\n\n|\n$)/g;let _0x21d125;const _0x4e225f=[];let _0x374f15=0x0;while((_0x21d125=_0x2e5436[_0x18d0a4(0x19f)](_0x29c907))!==null){_0x4e225f[_0x18d0a4(0x1a7)]({'id':_0x374f15++,'start':timeToSeconds(_0x21d125[0x2]),'end':timeToSeconds(_0x21d125[0x3]),'text':_0x21d125[0x4][_0x18d0a4(0x18c)]()});}return _0x4e225f;}function timeToSeconds(_0x6cafda){const _0x2e68aa=_0x502438,[_0x23835c,_0x4451ba,_0x545cb7]=_0x6cafda[_0x2e68aa(0x1b0)](':'),[_0x385b2d,_0x112a48]=_0x545cb7['split'](',');return parseInt(_0x23835c)*0xe10+parseInt(_0x4451ba)*0x3c+parseInt(_0x385b2d)+parseInt(_0x112a48)/0x3e8;}document['getElementById'](_0x502438(0x1c2))[_0x502438(0x183)](_0x502438(0x1ad),function(){const _0x333f6c=_0x502438,_0xa2d6c1=document['getElementById']('audioUrlInput')[_0x333f6c(0x1b9)];_0xa2d6c1?(audioPlayer[_0x333f6c(0x196)]=_0xa2d6c1,audioPlayer['play'](),document['getElementById'](_0x333f6c(0x1cd))[_0x333f6c(0x13a)][_0x333f6c(0x197)](_0x333f6c(0x1d5)),window[_0x333f6c(0x1e1)](document[_0x333f6c(0x15a)](_0x333f6c(0x162)))[_0x333f6c(0x1a2)]===_0x333f6c(0x1ba)&&window['getComputedStyle'](document[_0x333f6c(0x15a)](_0x333f6c(0x1cd)))[_0x333f6c(0x1a2)]==='none'&&(document[_0x333f6c(0x15a)](_0x333f6c(0x153))['style']['display']='none'),document[_0x333f6c(0x15a)](_0x333f6c(0x1b6))['style'][_0x333f6c(0x1a2)]='block',document[_0x333f6c(0x15a)](_0x333f6c(0x154))[_0x333f6c(0x1a4)][_0x333f6c(0x1a2)]='flex'):alert('Please\x20enter\x20a\x20valid\x20audio\x20URL.');}),document[_0x502438(0x15a)](_0x502438(0x158))[_0x502438(0x183)](_0x502438(0x1a1),function(_0x3ce3ef){const _0x40e073=_0x502438,_0x21ad89=_0x3ce3ef['target'][_0x40e073(0x18a)][0x0];if(_0x21ad89){const _0x190f8f=URL['createObjectURL'](_0x21ad89);audioPlayer[_0x40e073(0x196)]=_0x190f8f,audioPlayer['play'](),document['getElementById']('audioControls')[_0x40e073(0x13a)][_0x40e073(0x197)](_0x40e073(0x1d5)),window[_0x40e073(0x1e1)](document['getElementById'](_0x40e073(0x162)))[_0x40e073(0x1a2)]===_0x40e073(0x1ba)&&window[_0x40e073(0x1e1)](document['getElementById']('audioControls'))['display']===_0x40e073(0x1ba)&&(document['getElementById'](_0x40e073(0x153))[_0x40e073(0x1a4)][_0x40e073(0x1a2)]='none'),document[_0x40e073(0x15a)](_0x40e073(0x1b6))[_0x40e073(0x1a4)]['display']=_0x40e073(0x1cb),document[_0x40e073(0x15a)](_0x40e073(0x154))[_0x40e073(0x1a4)][_0x40e073(0x1a2)]=_0x40e073(0x1dc);}}),document[_0x502438(0x15a)](_0x502438(0x1b6))[_0x502438(0x183)]('click',function(){const _0x55c332=_0x502438;document['getElementById'](_0x55c332(0x1cd))[_0x55c332(0x13a)][_0x55c332(0x1d2)]('hidden'),document['getElementById'](_0x55c332(0x162))[_0x55c332(0x13a)][_0x55c332(0x1d2)](_0x55c332(0x1d5)),document[_0x55c332(0x15a)](_0x55c332(0x153))['style']['display']='block',document[_0x55c332(0x15a)](_0x55c332(0x177))[_0x55c332(0x1a4)][_0x55c332(0x1a2)]='none',document[_0x55c332(0x15a)](_0x55c332(0x1b5))[_0x55c332(0x1a4)][_0x55c332(0x1a2)]=_0x55c332(0x1ba),document[_0x55c332(0x15a)](_0x55c332(0x1b6))[_0x55c332(0x1a4)]['display']='none',document[_0x55c332(0x15a)]('progressContainer')[_0x55c332(0x1a4)][_0x55c332(0x1a2)]=_0x55c332(0x1ba),audioPlayer[_0x55c332(0x1be)](),document[_0x55c332(0x15a)](_0x55c332(0x172))[_0x55c332(0x1e0)]='Pause';const _0xff3d7c=document[_0x55c332(0x15a)](_0x55c332(0x1d3));_0xff3d7c['innerHTML']='',resetInactivityTimer();}),document[_0x502438(0x15a)](_0x502438(0x172))[_0x502438(0x183)](_0x502438(0x1ad),function(){const _0x48c436=_0x502438;audioPlayer['paused']?(audioPlayer['play'](),document['getElementById']('playcontrolButton')[_0x48c436(0x1e0)]=_0x48c436(0x1c5)):(audioPlayer[_0x48c436(0x1be)](),document['getElementById'](_0x48c436(0x172))[_0x48c436(0x1e0)]='Play');}),document[_0x502438(0x15a)]('hiddenButton')[_0x502438(0x183)](_0x502438(0x1ad),function(){const _0x1ef863=_0x502438;document[_0x1ef863(0x15a)](_0x1ef863(0x1cd))[_0x1ef863(0x13a)][_0x1ef863(0x197)]('hidden'),document['getElementById'](_0x1ef863(0x162))[_0x1ef863(0x13a)][_0x1ef863(0x197)](_0x1ef863(0x1d5)),document[_0x1ef863(0x15a)](_0x1ef863(0x1b6))['style'][_0x1ef863(0x1a2)]=_0x1ef863(0x1cb),document['getElementById']('hiddenButton')[_0x1ef863(0x1a4)][_0x1ef863(0x1a2)]=_0x1ef863(0x1ba),document[_0x1ef863(0x15a)]('ozButton')[_0x1ef863(0x1a4)]['display']=_0x1ef863(0x1cb),document['getElementById'](_0x1ef863(0x1b5))[_0x1ef863(0x1a4)]['display']=_0x1ef863(0x1cb),resetInactivityTimer();}),document[_0x502438(0x15a)](_0x502438(0x177))['addEventListener']('click',function(){const _0x1aa7c3=_0x502438;document[_0x1aa7c3(0x15a)](_0x1aa7c3(0x154))[_0x1aa7c3(0x1a4)][_0x1aa7c3(0x1a2)]=_0x1aa7c3(0x1ba),audioPlayer[_0x1aa7c3(0x1be)](),document['getElementById'](_0x1aa7c3(0x172))[_0x1aa7c3(0x1e0)]=_0x1aa7c3(0x1c5);const _0x29d2a4=document['getElementById'](_0x1aa7c3(0x1d3));_0x29d2a4[_0x1aa7c3(0x17c)]='';const _0x1d4e78={0x1:{'textUrl':_0x1aa7c3(0x1d6),'audioUrl':_0x1aa7c3(0x1c8)},0x2:{'textUrl':_0x1aa7c3(0x1bc),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_b2f6b9c7e92a490e8047ac90ca294731.mp3'},0x3:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_607835b9727d494086b9606cae776a24.txt','audioUrl':_0x1aa7c3(0x198)},0x4:{'textUrl':_0x1aa7c3(0x1ac),'audioUrl':_0x1aa7c3(0x13c)},0x5:{'textUrl':_0x1aa7c3(0x14f),'audioUrl':_0x1aa7c3(0x1b1)},0x6:{'textUrl':_0x1aa7c3(0x194),'audioUrl':_0x1aa7c3(0x193)},0x7:{'textUrl':_0x1aa7c3(0x1d7),'audioUrl':_0x1aa7c3(0x16e)},0x8:{'textUrl':_0x1aa7c3(0x17a),'audioUrl':_0x1aa7c3(0x1b4)},0x9:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b0e49a7c62b04f9b932c15a999ad963f.txt','audioUrl':_0x1aa7c3(0x137)},0xa:{'textUrl':_0x1aa7c3(0x1ca),'audioUrl':_0x1aa7c3(0x141)},0xb:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_4953fb9be38d45e8b3975e3448dc4459.txt','audioUrl':_0x1aa7c3(0x165)},0xc:{'textUrl':_0x1aa7c3(0x14c),'audioUrl':_0x1aa7c3(0x143)},0xd:{'textUrl':_0x1aa7c3(0x170),'audioUrl':_0x1aa7c3(0x167)},0xe:{'textUrl':_0x1aa7c3(0x1bd),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_e9921c8cb5b844588118282b17b6861f.mp3'},0xf:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_e19dd7eefe2f4154815d69aa52a89ed0.txt','audioUrl':_0x1aa7c3(0x1cf)},0x10:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_abeb2861c42e4f22b84fd8c51b542925.txt','audioUrl':'https://static.wixstatic.com/mp3/67c6c6_6815dcfa41f444e087fe3c5879c63ecb.mp3'},0x11:{'textUrl':_0x1aa7c3(0x1dd),'audioUrl':_0x1aa7c3(0x1a8)},0x12:{'textUrl':_0x1aa7c3(0x186),'audioUrl':_0x1aa7c3(0x1c6)},0x13:{'textUrl':_0x1aa7c3(0x1a0),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_9e87d87d3e5d4b4294a2d64fa9148ff3.mp3'},0x14:{'textUrl':_0x1aa7c3(0x1c4),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_997080ca9ae04357b5ec6caffb7930bc.mp3'},0x15:{'textUrl':_0x1aa7c3(0x1af),'audioUrl':_0x1aa7c3(0x1b8)},0x16:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_f81fe35362c34534afdcb73c17023663.txt','audioUrl':_0x1aa7c3(0x14b)},0x17:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_9f6d6ec323a643c8ad3019cdb07dfc88.txt','audioUrl':_0x1aa7c3(0x13b)},0x18:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_3c2f0b0dbed74866b423d7fcbd76a260.txt','audioUrl':_0x1aa7c3(0x13f)}};for(let _0x4b9488=0x1;_0x4b9488<=0x18;_0x4b9488++){const _0x324b8c=document['createElement'](_0x1aa7c3(0x18e));_0x324b8c[_0x1aa7c3(0x1e0)]=_0x1aa7c3(0x147)+_0x4b9488,_0x324b8c['id']=_0x1aa7c3(0x1b3)+_0x4b9488,_0x324b8c[_0x1aa7c3(0x140)]=_0x1aa7c3(0x15e),_0x29d2a4[_0x1aa7c3(0x146)](_0x324b8c),_0x1d4e78[_0x4b9488]&&_0x324b8c[_0x1aa7c3(0x183)](_0x1aa7c3(0x1ad),function(){const _0x59f7de=_0x1aa7c3,{textUrl:_0x14a5a3,audioUrl:_0x59ba62}=_0x1d4e78[_0x4b9488];fetch(_0x14a5a3)['then'](_0x41da5a=>_0x41da5a[_0x59f7de(0x149)]())[_0x59f7de(0x1ab)](_0xf63e0d=>{const _0x2be752=_0x59f7de;subtitles=parseTxt(_0xf63e0d),subtitlesDisplay[_0x2be752(0x17c)]=subtitles[_0x2be752(0x188)](_0x416c74=>_0x2be752(0x1b7)+_0x416c74['id']+_0x2be752(0x190)+_0x416c74[_0x2be752(0x1c3)]+_0x2be752(0x142)+_0x416c74['marginLeft']+_0x2be752(0x1d9)+_0x416c74[_0x2be752(0x149)]['replace'](/\n/g,_0x2be752(0x1db))+_0x2be752(0x19b))[_0x2be752(0x199)](''),addSubtitleClickListeners();}),audioPlayer[_0x59f7de(0x196)]=_0x59ba62,audioPlayer[_0x59f7de(0x19a)](),document[_0x59f7de(0x15a)](_0x59f7de(0x154))['style']['display']=_0x59f7de(0x1dc);});}}),document[_0x502438(0x15a)](_0x502438(0x1b5))[_0x502438(0x183)](_0x502438(0x1ad),function(){const _0x65ce38=_0x502438;document[_0x65ce38(0x15a)]('progressContainer')[_0x65ce38(0x1a4)]['display']=_0x65ce38(0x1ba),audioPlayer[_0x65ce38(0x1be)](),document[_0x65ce38(0x15a)](_0x65ce38(0x172))[_0x65ce38(0x1e0)]='Pause';const _0x15def8=document['getElementById'](_0x65ce38(0x1d3));_0x15def8[_0x65ce38(0x17c)]='';const _0x27742c={0x0:{'textUrl':_0x65ce38(0x138),'audioUrl':_0x65ce38(0x16a)},0x1:{'textUrl':_0x65ce38(0x157),'audioUrl':_0x65ce38(0x155)},0x2:{'textUrl':_0x65ce38(0x156),'audioUrl':_0x65ce38(0x1a3)},0x3:{'textUrl':_0x65ce38(0x195),'audioUrl':_0x65ce38(0x192)},0x4:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d88979778b464f9ebf8d3e8c3286cdb9.txt','audioUrl':_0x65ce38(0x1de)},0x5:{'textUrl':_0x65ce38(0x1c1),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_1b90886a370e4df8b798ce59327981bc.mp3'},0x6:{'textUrl':_0x65ce38(0x17d),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_c78eeaef852e4fcf99101bc32392d628.mp3'},0x7:{'textUrl':_0x65ce38(0x144),'audioUrl':_0x65ce38(0x18d)},0x8:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_d2909545f1c247638dd8bd7bd916b13b.txt','audioUrl':_0x65ce38(0x15d)},0x9:{'textUrl':_0x65ce38(0x148),'audioUrl':'https://static.wixstatic.com/mp3/67c6c6_0dd20c5e27a84baa9ac3ed1ead9c87ff.mp3'},0xa:{'textUrl':'https://67c6c675-640a-4512-a169-b7274642eb96.usrfiles.com/ugd/67c6c6_b7a7f6c1366b47e5afde9be3f53004a9.txt','audioUrl':_0x65ce38(0x171)}};for(let _0x42beb8=0x0;_0x42beb8<=0xa;_0x42beb8++){const _0x283de4=document[_0x65ce38(0x187)](_0x65ce38(0x18e));_0x42beb8==0x0?_0x283de4[_0x65ce38(0x1e0)]='Introduction':_0x283de4['textContent']=_0x65ce38(0x147)+_0x42beb8,_0x283de4['id']='chapterButton'+_0x42beb8,_0x283de4[_0x65ce38(0x140)]=_0x65ce38(0x15e),_0x15def8['appendChild'](_0x283de4),_0x27742c[_0x42beb8]&&_0x283de4[_0x65ce38(0x183)](_0x65ce38(0x1ad),function(){const _0x3a5562=_0x65ce38,{textUrl:_0x48e6d1,audioUrl:_0x147648}=_0x27742c[_0x42beb8];fetch(_0x48e6d1)[_0x3a5562(0x1ab)](_0x5890d0=>_0x5890d0[_0x3a5562(0x149)]())['then'](_0x266929=>{const _0x2648b7=_0x3a5562;subtitles=parseTxt(_0x266929),subtitlesDisplay[_0x2648b7(0x17c)]=subtitles['map'](_0x2aee29=>_0x2648b7(0x1b7)+_0x2aee29['id']+'\x22\x20class=\x22subtitle\x22\x20data-start=\x22'+_0x2aee29[_0x2648b7(0x1c3)]+_0x2648b7(0x142)+_0x2aee29['marginLeft']+_0x2648b7(0x1d9)+_0x2aee29[_0x2648b7(0x149)][_0x2648b7(0x151)](/\n/g,_0x2648b7(0x1db))+_0x2648b7(0x19b))[_0x2648b7(0x199)](''),addSubtitleClickListeners();}),audioPlayer[_0x3a5562(0x196)]=_0x147648,audioPlayer['play'](),document['getElementById'](_0x3a5562(0x154))[_0x3a5562(0x1a4)][_0x3a5562(0x1a2)]='flex';});}}),audioPlayer[_0x502438(0x183)](_0x502438(0x14a),function(){const _0x315e98=_0x502438,_0x33b3d1=audioPlayer[_0x315e98(0x161)]/audioPlayer[_0x315e98(0x14e)]*0x64;progressBar[_0x315e98(0x1b9)]=_0x33b3d1;const _0x5ad44e=Math[_0x315e98(0x18f)](audioPlayer[_0x315e98(0x161)]/0x3c),_0xc482fa=Math[_0x315e98(0x18f)](audioPlayer[_0x315e98(0x161)]%0x3c);currentTimeDisplay[_0x315e98(0x1e0)]=_0x5ad44e+':'+(_0xc482fa<0xa?'0':'')+_0xc482fa;}),progressBar[_0x502438(0x183)](_0x502438(0x145),function(){const _0x5f06dd=_0x502438,_0x444ec2=progressBar[_0x5f06dd(0x1b9)]/0x64*audioPlayer['duration'];audioPlayer[_0x5f06dd(0x161)]=_0x444ec2;}),document[_0x502438(0x183)](_0x502438(0x182),function(_0x1108d5){const _0x599425=_0x502438;(_0x1108d5[_0x599425(0x1bb)]===_0x599425(0x1ae)||_0x1108d5[_0x599425(0x1bb)]===_0x599425(0x1b2))&&(_0x1108d5['preventDefault'](),audioPlayer[_0x599425(0x1a9)]?(audioPlayer[_0x599425(0x19a)](),document[_0x599425(0x15a)](_0x599425(0x172))[_0x599425(0x1e0)]=_0x599425(0x1c5)):(audioPlayer['pause'](),document[_0x599425(0x15a)](_0x599425(0x172))['textContent']=_0x599425(0x175)));});let inactivityTimer;const inactivityDelay=0x4650,elementsToHide=[document[_0x502438(0x15a)](_0x502438(0x1cd)),document[_0x502438(0x15a)](_0x502438(0x162))],showControlsButton=document['getElementById']('showButton');function handleInactivity(){const _0x2c19c2=_0x502438;elementsToHide[_0x2c19c2(0x179)](_0x5c9886=>_0x5c9886['classList'][_0x2c19c2(0x197)]('hidden')),document[_0x2c19c2(0x15a)]('hiddenButton')['style'][_0x2c19c2(0x1a2)]='none',showControlsButton[_0x2c19c2(0x1a4)][_0x2c19c2(0x1a2)]=_0x2c19c2(0x1cb),document[_0x2c19c2(0x15a)](_0x2c19c2(0x177))['style'][_0x2c19c2(0x1a2)]=_0x2c19c2(0x1cb),document['getElementById'](_0x2c19c2(0x1b5))[_0x2c19c2(0x1a4)][_0x2c19c2(0x1a2)]=_0x2c19c2(0x1cb);}function resetInactivityTimer(){clearTimeout(inactivityTimer),inactivityTimer=setTimeout(handleInactivity,inactivityDelay);}document[_0x502438(0x15a)](_0x502438(0x1cd))['addEventListener'](_0x502438(0x145),resetInactivityTimer),document['getElementById'](_0x502438(0x1cd))['addEventListener'](_0x502438(0x1a1),resetInactivityTimer),document['getElementById'](_0x502438(0x162))[_0x502438(0x183)](_0x502438(0x145),resetInactivityTimer),document[_0x502438(0x15a)](_0x502438(0x162))[_0x502438(0x183)](_0x502438(0x1a1),resetInactivityTimer),document[_0x502438(0x15a)]('playButton')[_0x502438(0x183)](_0x502438(0x1ad),resetInactivityTimer),document[_0x502438(0x15a)](_0x502438(0x158))['addEventListener'](_0x502438(0x1a1),resetInactivityTimer),document[_0x502438(0x15a)](_0x502438(0x1bf))[_0x502438(0x183)](_0x502438(0x1ad),resetInactivityTimer),document[_0x502438(0x15a)](_0x502438(0x16d))[_0x502438(0x183)](_0x502438(0x1a1),resetInactivityTimer),document[_0x502438(0x15a)]('fileUrlInput')['addEventListener']('input',resetInactivityTimer),document[_0x502438(0x15a)](_0x502438(0x152))[_0x502438(0x183)]('input',resetInactivityTimer),resetInactivityTimer();
+    </script>
+</body>
+</html>
