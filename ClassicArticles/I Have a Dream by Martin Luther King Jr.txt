@@ -1,0 +1,112 @@
+<p data-start="0.24" data-end="4.74">I have the pleasure of presenting to you Martin Luther King, Jr.</p>
+<p data-start="0.24" data-end="4.74">我很榮幸為您介紹馬丁·路德·金博士。</p>
+<p data-start="5.84" data-end="24.90">I am happy to join with you today in what will go down in history as the greatest demonstration</p>
+<p data-start="5.84" data-end="24.90">我很高興今天能與大家一起參加這場注定將載入史冊的偉大示威活動。</p>
+<p data-start="25.68" data-end="45.30">for freedom in the history of our nation. Five score years ago, a great American, in whose symbolic</p>
+<p data-start="25.68" data-end="45.30">這是我們國家歷史上為自由而舉行的最偉大的示威活動。五十年前，一位偉大的美國人，在其象徵性的</p>
+<p data-start="46.08" data-end="61.42">shadow we stand today, signed the Emancipation Proclamation. This momentous decree came as a great beacon light of hope to</p>
+<p data-start="46.08" data-end="61.42">陰影下，我們今天站立於此，他簽署了《解放奴隸宣言》。這項重要的法令如同希望的燈塔，為</p>
+<p data-start="61.44" data-end="72.94">millions of Negro slaves who had been seared in the flames of withering injustice. It came as a joyous</p>
+<p data-start="61.44" data-end="72.94">數百萬深受殘酷不公折磨的黑人奴隸帶來了光明。它如同歡欣的破曉，終結了他們漫長的囚禁之夜。</p>
+<p data-start="72.96" data-end="90.92">daybreak to end the long night of their captivity. But one hundred years later, the Negro still is not free.</p>
+<p data-start="72.96" data-end="90.92">但一百年後，黑人依然沒有獲得自由。</p>
+<p data-start="92.96" data-end="106.12">One hundred years later, the life of the Negro is still sadly crippled by the manacles of segregation and the chains of discrimination.</p>
+<p data-start="92.96" data-end="106.12">一百年後，黑人的生活仍然被種族隔離的鐐銬和歧視的鎖鏈所殘害。</p>
+<p data-start="107.28" data-end="119.10">One hundred years later, the Negro lives on a lonely island of poverty in the midst of a vast ocean of material prosperity.</p>
+<p data-start="107.28" data-end="119.10">一百年後，黑人仍然生活在貧窮的孤島上，周圍卻是物質繁榮的汪洋大海。</p>
+<p data-start="119.96" data-end="135.80">One hundred years later, the Negro is still languished in the corners of American society and finds himself an exile in his own land.</p>
+<p data-start="119.96" data-end="135.80">一百年後，黑人仍然被困在美國社會的角落中，成為自己國土上的流亡者。</p>
+<p data-start="137.18" data-end="149.40">And so we've come here today to dramatize a shameful condition. In a sense we've come to our nation's capital to cash a check.</p>
+<p data-start="137.18" data-end="149.40">因此，我們今天來到這裡，為這種可恥的情況發聲。從某種意義上說，我們來到我們國家的首都，是為了兌現一張支票。</p>
+<p data-start="151.54" data-end="160.46">When the architects of our republic wrote the magnificent words of the Constitution and the Declaration of Independence,</p>
+<p data-start="151.54" data-end="160.46">當我們共和國的建國者寫下憲法和《獨立宣言》那宏偉的文字時，</p>
+<p data-start="162.36" data-end="186.44">they were signing a promissory note to which every American was to fall heir. This note was a promise that all men, yes, black men as well as white men, would be guaranteed the "unalienable Rights" of "Life, Liberty and the pursuit of Happiness."</p>
+<p data-start="162.36" data-end="186.44">他們簽署了一張給每個美國人的期票。這張期票承諾所有人，不論是黑人還是白人，都將被保障擁有「不可剝奪的權利」，即「生命、自由和追求幸福的權利」。</p>
+<p data-start="188.40" data-end="213.94">It is obvious today that America has defaulted on this promissory note, insofar as her citizens of color are concerned. Instead of honoring this sacred obligation, America has given the Negro people a bad check, a check which has come back marked "insufficient funds."</p>
+<p data-start="188.40" data-end="213.94">今天顯然美國對於其有色人種的公民違約了。美國沒有履行這一神聖的義務，而是給了黑人一張空頭支票，這張支票被標記為「資金不足」。</p>
+<p data-start="222.22" data-end="241.14">But we refuse to believe that the bank of justice is bankrupt. We refuse to believe that there are insufficient funds in the great vaults of opportunity of this nation.</p>
+<p data-start="222.22" data-end="241.14">但我們拒絕相信正義的銀行已經破產。我們拒絕相信這個國家的機會金庫裡會缺乏足夠的資金。</p>
+<p data-start="241.98" data-end="250.76">And so, we've come to cash this check, a check that will give us upon demand the riches of freedom and the security of justice.</p>
+<p data-start="241.98" data-end="250.76">因此，我們來此兌現這張支票，這張支票將讓我們即刻獲得自由的財富和正義的保障。</p>
+<p data-start="251.26" data-end="269.72">We have also come to this hallowed spot to remind America of the fierce urgency of Now.</p>
+<p data-start="251.26" data-end="269.72">我們也來到這片神聖的土地，提醒美國如今的急迫性。</p>
+<p data-start="271.98" data-end="280.28">This is no time to engage in the luxury of cooling off or to take the tranquilizing drug of gradualism.</p>
+<p data-start="271.98" data-end="280.28">現在不是冷靜下來享受安逸，或服用漸進主義麻醉劑的時候。</p>
+<p data-start="280.40" data-end="298.66">Now is the time to make real the promises of democracy. Now is the time to rise from the dark and desolate </p>
+<p data-start="280.40" data-end="298.66">現在是實現民主承諾的時候。</p>
+<p data-start="298.80" data-end="305.76">valley of segregation to the sunlit path of racial justice. Now is the time</p>
+<p data-start="298.80" data-end="305.76">現在是走出種族隔離的黑暗荒谷，邁向種族正義的陽光大道的時候。</p>
+<p data-start="309.24" data-end="316.72">to lift our nation from the quicksands of racial injustice to the solid rock of brotherhood. Now is the time</p>
+<p data-start="309.24" data-end="316.72">現在是時候將我們的國家從種族不公的流沙中拔起，站上兄弟情誼的堅固基石。現在是時候</p>
+<p data-start="317.62" data-end="332.86">to make justice a reality for all of God's children. It would be fatal for the nation to overlook the urgency of the moment.</p>
+<p data-start="317.62" data-end="332.86">讓正義成為所有上帝兒女的現實。如果忽視了當下的急迫性，對國家將是致命的。</p>
+<p data-start="333.42" data-end="341.02">This sweltering summer of the Negro's legitimate discontent will not pass until there is an</p>
+<p data-start="333.42" data-end="341.02">黑人正當不滿的炙熱之夏將不會結束，直到迎來自由和平等的激勵之秋。</p>
+<p data-start="341.20" data-end="351.16">invigorating autumn of freedom and equality. Nineteen sixty‐three is not an end, but a beginning. And those who hope</p>
+<p data-start="341.20" data-end="351.16">1963年不是終點，而是起點。那些認為黑人只是發洩情緒，現在會滿足的人，</p>
+<p data-start="351.62" data-end="360.30">that the Negro needed to blow off steam and will now be content will have a rude awakening if the nation </p>
+<p data-start="351.62" data-end="360.30">如果國家恢復一如往常的運作，將會受到無情的驚醒。</p>
+<p data-start="360.32" data-end="383.90">returns to business as usual. And there will be neither rest nor tranquility in America until the Negro is granted</p>
+<p data-start="360.32" data-end="383.90">美國將無法獲得安寧或平靜，直到黑人被賦予其公民權利。</p>
+<p data-start="383.94" data-end="395.56">his citizenship rights. The whirlwinds of revolt will continue to shake the foundations of our nation until the bright day of justice emerges.</p>
+<p data-start="383.94" data-end="395.56">革命的旋風將繼續動搖我們國家的根基，直到正義的光明之日到來。</p>
+<p data-start="396.86" data-end="405.74">But there is something that I must say to my people, who stand on the warm threshold which leads into the palace of justice:</p>
+<p data-start="396.86" data-end="405.74">但有件事我必須對我的人民說，他們站在通往正義殿堂的溫暖門檻上：</p>
+<p data-start="407.66" data-end="423.20">In the process of gaining our rightful place, we must not be guilty of wrongful deeds. Let us not seek to satisfy our thirst for freedom by drinking from the cup of bitterness and hatred.</p>
+<p data-start="407.66" data-end="423.20">在獲得我們應有位置的過程中，我們不能犯下錯誤行為。讓我們不要通過飲下苦澀與仇恨之杯來滿足對自由的渴望。我們必須永遠以尊嚴和紀律的崇高姿態來進行我們的抗爭。</p>
+<p data-start="427.58" data-end="452.90">We must forever conduct our struggle on the high plane of dignity and discipline. We must not allow our creative protest to degenerate into physical violence. Again and again, we must rise to the majestic heights of meeting physical force with soul force.</p>
+<p data-start="427.58" data-end="452.90">我們必須永遠在尊嚴和紀律的高尚境界中進行我們的鬥爭。我們不能讓我們的創造性抗議演變為身體上的暴力。一次又一次，我們必須升華到以靈魂的力量對抗身體暴力的崇高境界。</p>
+<p data-start="455.12" data-end="470.82">The marvelous new militancy which has engulfed the Negro community must not lead us to a distrust of all white people, for many of our white brothers, as evidenced by their presence here today,</p>
+<p data-start="455.12" data-end="470.82">席捲黑人社區的這場奇妙的新激進運動，不應該讓我們對所有白人產生不信任，因為我們的許多白人兄弟，正如他們今天來到這裡所證明的，</p>
+<p data-start="483.06" data-end="511.90">have come to realize that their destiny is tied up with our destiny. And they have come to realize that their freedom is inextricably bound to our freedom. We cannot walk alone. And as we walk, we must make the pledge that we shall always march ahead. We cannot turn back. There are those who are asking the devotees of civil rights, "When will you be satisfied?" </p>
+<p data-start="483.06" data-end="511.90">已經開始意識到他們的命運與我們的命運緊密相連。他們也意識到，他們的自由與我們的自由密不可分。我們不能單獨行走。在我們前行時，我們必須承諾永遠向前邁進。我們不能回頭。有些人在問民權運動的追隨者：「你們什麼時候會滿足？」</p>
+<p data-start="513.36" data-end="535.48">We can never be satisfied as long as the Negro is the victim of the unspeakable horrors of police brutality. We can never be satisfied as long as our bodies, heavy with the fatigue of travel, cannot gain lodging in the motels of the highways and the hotels of the cities. We cannot be satisfied as long as the negro's basic mobility is from a smaller ghetto to a larger one. We can never be satisfied as long as our children are stripped of their self‐hood and robbed of their dignity by signs stating: "For Whites Only."</p>
+<p data-start="513.36" data-end="535.48">只要黑人仍是警察暴行的受害者，我們就永遠不會滿足。只要我們的身軀因旅途疲憊無法在公路旁的汽車旅館或城市的旅館找到住宿，我們就永遠不會滿足。只要黑人的基本移動只是在小的貧民區和大的貧民區之間，我們就永遠不會滿足。只要我們的孩子因為「僅限白人」的標誌而被剝奪自我和尊嚴，我們就永遠不會滿足。</p>
+<p data-start="543.04" data-end="552.58">We cannot be satisfied as long as a Negro in Mississippi cannot vote and a Negro in New York believes he has nothing for which to vote.</p>
+<p data-start="543.04" data-end="552.58">只要密西西比州的黑人不能投票，紐約州的黑人覺得自己沒有任何值得投票的理由，我們就不能滿足。</p>
+<p data-start="554.34" data-end="571.68">No, no, we are not satisfied, and we will not be satisfied until "justice rolls down like waters, and righteousness like a mighty stream."</p>
+<p data-start="554.34" data-end="571.68">不，不，我們不滿足，我們不會滿足，直到「正義像水一樣滾滾而來，公義如大河奔流。」</p>
+<p data-start="573.32" data-end="602.60">I am not unmindful that some of you have come here out of great trials and tribulations. Some of you have come fresh from narrow jail cells. And some of you have come from areas where your quest ‐‐ quest for freedom</p>
+<p data-start="573.32" data-end="602.60">我知道，你們中的一些人經歷了重重考驗與磨難。你們中的一些人剛從狹窄的牢房走出來。你們中的一些人來自那些自由追求之旅，</p>
+<p data-start="604.24" data-end="632.82">left you battered by the storms of persecution and staggered by the winds of police brutality. You have been the veterans of creative suffering. Continue to work with the faith that unearned suffering is redemptive. Go back to Mississippi, go back to Alabama, go back to South Carolina, go back to Georgia,</p>
+<p data-start="604.24" data-end="632.82">你們在那裡遭受了迫害的風暴，並被警察暴行的狂風擊倒。你們是創造性痛苦的老兵。繼續帶著信念奮鬥，相信未經應得的痛苦具有救贖意義。回到密西西比，回到阿拉巴馬，回到南卡羅來納，回到喬治亞，</p>
+<p data-start="632.96" data-end="638.14">go back to Louisiana, go back to the slums and ghettos of our northern cities,</p>
+<p data-start="632.96" data-end="638.14">回到路易斯安那，回到我們北方城市的貧民窟和貧困區，</p>
+<p data-start="638.66" data-end="648.00">knowing that somehow this situation can and will be changed. Let us not wallow in the valley of despair,</p>
+<p data-start="638.66" data-end="648.00">相信這種情況總有一天會改變，並且一定會改變。不要在絕望的深谷中打滾，</p>
+<p data-start="649.48" data-end="651.90">I say to you today, my friends.</p>
+<p data-start="649.48" data-end="651.90">今天，我對你們說，我的朋友們。</p>
+<p data-start="654.38" data-end="671.20">And so even though we face the difficulties of today and tomorrow, I still have a dream.</p>
+<p data-start="654.38" data-end="671.20">因此，即便我們面臨今天和明天的困難，我依然懷有一個夢想。</p>
+<p data-start="673.30" data-end="686.28">It is a dream deeply rooted in the American dream. I have a dream that one day this nation will rise up</p>
+<p data-start="673.30" data-end="686.28">這是一個深植於美國夢的夢想。我夢想有一天，這個國家會崛起，</p>
+<p data-start="687.18" data-end="695.94">and live out the true meaning of its creed: "We hold these truths to be self‐evident, that all men are created equal."</p>
+<p data-start="687.18" data-end="695.94">並實現其信條的真正含義：「我們堅信這些真理不言自明，所有人生而平等。」</p>
+<p data-start="697.24" data-end="715.88">I have a dream that one day on the red hills of Georgia, the sons of former slaves and the sons</p>
+<p data-start="697.24" data-end="715.88">我有一個夢想，有一天在喬治亞的紅色丘陵上，昔日奴隸的子孫和昔日奴隸主的子孫</p>
+<p data-start="715.88" data-end="723.82">of former slave owners will be able to sit down together at the table of brotherhood. I have a dream</p>
+<p data-start="715.88" data-end="723.82">能夠一起坐在兄弟情誼的桌旁。我有一個夢想，</p>
+<p data-start="724.24" data-end="735.48">that one day even the state of Mississippi, a state sweltering with the heat of injustice,</p>
+<p data-start="724.24" data-end="735.48">有一天，即便是密西西比州，這個充斥著不公正和壓迫炙熱的州，</p>
+<p data-start="735.60" data-end="745.40">sweltering with the heat of oppression, will be transformed into an oasis of freedom and justice. I have a dream</p>
+<p data-start="735.60" data-end="745.40">將會被改造成自由與正義的綠洲。我有一個夢想，</p>
+<p data-start="749.08" data-end="761.34">that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character. I have a dream today!</p>
+<p data-start="749.08" data-end="761.34">有一天，我的四個孩子將生活在一個國家，在那裡他們將不會因膚色而被評判，而是根據他們的品格。我今天有一個夢想！</p>
+<p data-start="770.08" data-end="798.88">I have a dream that one day, down in Alabama, with its vicious racists, with its governor having his lips dripping with the words of "interposition" and "nullification" ‐‐ one day right there in Alabama little black boys and black girls will be able to join hands with little white boys and white girls as sisters and brothers. I have a dream today!</p>
+<p data-start="770.08" data-end="798.88">我有一個夢想，有一天，在阿拉巴馬州，儘管那裡有惡毒的種族主義者，儘管那裡的州長口中不斷重複「插手」和「無效」的字眼——有一天，在阿拉巴馬州，黑人小男孩和黑人小女孩能夠與白人小男孩和白人小女孩手牽手，像兄弟姐妹一樣。我今天有一個夢想！</p>
+<p data-start="800.22" data-end="813.90">I have a dream that one day every valley shall be exalted, and every hill and mountain shall be made low,</p>
+<p data-start="800.22" data-end="813.90">我有一個夢想，有一天每個山谷都將被抬高，每座山丘和高山都將被夷平，</p>
+<p data-start="814.14" data-end="821.82">the rough places will be made plain, and the crooked places will be made straight; "and the glory of the Lord shall be revealed and all flesh</p>
+<p data-start="814.14" data-end="821.82">崎嶇的地方將變得平坦，彎曲的道路將變得筆直；「耶和華的榮耀將被顯現，所有人</p>
+<p data-start="822.08" data-end="852.06">shall see it together." This is our hope, and this is the faith that I go back to the South with. With this faith, we will be able to hew out of the mountain of despair a stone of hope. With this faith, we will be able to transform the jangling discords of our nation into a beautiful symphony of brotherhood. With this faith, we will be able to work together, to pray together,</p>
+<p data-start="822.08" data-end="852.06">都將一起看到。」這是我們的希望，這是我帶著回到南方的信念。憑著這種信念，我們將能夠從絕望的高山中鑿出一塊希望的石頭。憑著這種信念，我們將能夠把我們國家的不協和音轉化為一首美妙的兄弟情誼交響曲。憑著這種信念，我們將能夠一起工作，一起祈禱，</p>
+<p data-start="852.12" data-end="881.48">to struggle together, to go to jail together, to stand up for freedom together, knowing that we will be free one day. And this will be the day ‐‐ this will be the day when all of God's children will be able to sing with new meaning: My country 'tis of thee, sweet land of liberty, of thee I sing. Land where my fathers died, land of the Pilgrim's pride,</p>
+<p data-start="852.12" data-end="881.48">一起奮鬥，一起入獄，一起為自由挺身而出，因為我們知道，有一天我們將會自由。那一天——那一天將會是所有上帝的兒女都能以新的意義唱出：我的國家，為你而歌，自由的甜美之地，為你而歌。那是我父輩捨命的地方，那是朝聖者的驕傲，</p>
+<p data-start="882.54" data-end="909.62">From every mountainside, let freedom ring! And if America is to be a great nation, this must become true. And so let freedom ring from the prodigious hilltops of New Hampshire. Let freedom ring from the mighty mountains of New York. Let freedom ring from the heightening Alleghenies of Pennsylvania. Let freedom ring from the snow‐capped Rockies of Colorado.</p>
+<p data-start="882.54" data-end="909.62">從每一座山丘上，讓自由的鐘聲響起！如果美國要成為一個偉大的國家，這一點必須成為現實。因此，讓自由的鐘聲響起於新罕布夏州的巍峨山巔。讓自由的鐘聲響起於紐約州的高聳群山。讓自由的鐘聲響起於賓夕法尼亞州的阿勒格尼山脈。讓自由的鐘聲響起於科羅拉多州雪頂覆蓋的洛磯山脈。</p>
+<p data-start="911.20" data-end="937.28">Let freedom ring from the curvaceous slopes of California. But not only that: Let freedom ring from Stone Mountain of Georgia. Let freedom ring from Lookout Mountain of Tennessee. Let freedom ring from every hill and molehill of Mississippi. From every mountainside, let freedom ring. And when this happens,</p>
+<p data-start="911.20" data-end="937.28">讓自由的鐘聲響起於加利福尼亞州婀娜多姿的山坡。但不僅如此：讓自由的鐘聲響起於喬治亞州的石山。讓自由的鐘聲響起於田納西州的瞭望山。讓自由的鐘聲響起於密西西比州的每一座山丘和土墩。從每一座山峰上，讓自由的鐘聲響起。而當這一刻到來，</p>
+<p data-start="938.28" data-end="966.60">when we allow freedom ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual:</p>
+<p data-start="938.28" data-end="966.60">當我們允許自由的鐘聲響起，當我們讓它響遍每個村莊、每個小鎮、每個州、每個城市，我們將能夠加速那一天的到來，當所有上帝的兒女——黑人與白人，猶太人與非猶太人，新教徒與天主教徒——能夠攜手並肩，唱出那古老的黑人靈歌的歌詞：</p>
+<p data-start="967.24" data-end="972.24">Free at last! Free at last! Thank God Almighty, we are free at last!</p>
+<p data-start="967.24" data-end="972.24">終於自由！終於自由！感謝全能的上帝，我們終於自由了！</p>
