@@ -150,7 +150,8 @@
         }
 
 
-        #GrimmsButton {
+        #GrimmsButton,
+        #ClassicArticlesButton {
             font-size: 16px;
             border: none;
             background-color: #e4e7fe;
@@ -292,6 +293,7 @@
             <div class="show-controls" id="Controls">
                 <button id="secondControl" style="display: none;"></button>
                 <button id="GrimmsButton" style="display: none;">Grimm</button>
+                <button id="ClassicArticlesButton" style="display: none;">Classic Articles</button>
                 <button id="showButton" style="display: none;">Show Control</button>
                 
             </div>
@@ -626,7 +628,8 @@
             
             document.getElementById('hiddenButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'none';
-            document.getElementById('GrimmsButton').style.display = 'none'; // 顯示 OZ 按鈕
+            document.getElementById('GrimmsButton').style.display = 'none';
+            document.getElementById('ClassicArticlesButton').style.display = 'none';
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
             document.getElementById('progressContainer').style.display = 'none';
@@ -656,7 +659,8 @@
             document.getElementById('showButton').style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
-            document.getElementById('GrimmsButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('GrimmsButton').style.display = 'block';
+            document.getElementById('ClassicArticlesButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
             //document.getElementById('progressContainer').style.display = 'flex';
 
@@ -665,14 +669,16 @@
         });
 
         document.getElementById('secondControl').addEventListener('click', function() {
-            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('GrimmsButton').style.display === 'none') {
+            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('GrimmsButton').style.display === 'none' && document.getElementById('ClassicArticlesButton').style.display === 'none') {
                 // 如果两个按钮都是隐藏的，则显示它们
                 document.getElementById('showButton').style.display = 'block';
                 document.getElementById('GrimmsButton').style.display = 'block';
+                document.getElementById('ClassicArticlesButton').style.display = 'block';
             } else {
                 // 如果其中一个或两个按钮是显示的，则隐藏它们
                 document.getElementById('showButton').style.display = 'none';
                 document.getElementById('GrimmsButton').style.display = 'none';
+                document.getElementById('ClassicArticlesButton').style.display = 'none';
             }
         });
 
@@ -745,6 +751,76 @@
         });
 
 
+
+        document.getElementById('ClassicArticlesButton').addEventListener('click', function() {
+            document.getElementById('progressContainer').style.display = 'none';
+            // 停止播放
+            audioPlayer.pause();
+            document.getElementById('playcontrolButton').textContent = 'Pause';
+            const container = document.getElementById('fileContent');
+            container.innerHTML = ''; // 清空容器以防止重複生成按鈕
+
+            // 章節對應的音頻和字幕URL
+            const chapters = {
+                1: {
+                    textUrl: 'ClassicArticles/I Have a Dream by Martin Luther King Jr.txt',
+                    audioUrl: 'ClassicArticles/I Have a Dream by Martin Luther King Jr.mp3'
+                },
+                2: {
+                    textUrl: '',
+                    audioUrl: ''
+                },
+                3: {
+                    textUrl: '',
+                    audioUrl: ''
+                }
+            };
+
+            for (let i = 1; i <= Object.keys(chapters).length; i++) {
+                const button = document.createElement('button');
+                button.textContent = `${i}`;
+                button.id = `chapterButton${i}`;
+                button.className = 'chapter-button';
+                container.appendChild(button);
+
+                if (chapters[i]) {
+                    button.addEventListener('click', function() {
+                        container.innerHTML = '';
+                        const { textUrl, audioUrl } = chapters[i];
+                        
+                        // 加載字幕
+                        fetch(textUrl)
+                            .then(response => response.text())
+                            .then(content => {
+                                const lines = content.split('\n');
+
+                                // 处理第一行作为图片 HTML 标签
+                                const firstLine = lines[0].trim();
+                                if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
+                                    subtitlesDisplay.innerHTML = firstLine; // 显示图片
+                                    const subtitleContent = lines.slice(1).join('\n');
+                                    subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
+                                } else {
+                                    subtitles = parseTxt(content); // 解析txt格式的字幕
+                                } 
+                                // Display parsed subtitles and add click event listeners
+                                subtitlesDisplay.innerHTML += subtitles.map(sub => 
+                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                ).join('');
+                                addSubtitleClickListeners();
+                            });
+
+                        // 播放音頻
+                        audioPlayer.src = audioUrl;
+                        audioPlayer.play();
+                        document.getElementById('progressContainer').style.display = 'flex';
+                    });
+                }
+            }
+        });
+
+
+
         /*document.getElementById('fileContent').addEventListener('click', function(event) {
             if (event.target && event.target.id === 'chapterButton23') {
                 fetch('23.txt')
@@ -803,7 +879,8 @@
             document.getElementById('hiddenButton').style.display = 'none';
             showControlsButton.style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
-            document.getElementById('GrimmsButton').style.display = 'block'; // 顯示 OZ 按鈕
+            document.getElementById('GrimmsButton').style.display = 'block';
+            document.getElementById('ClassicArticlesButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
         }
 
