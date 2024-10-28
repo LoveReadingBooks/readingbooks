@@ -792,22 +792,28 @@
                         fetch(textUrl)
                             .then(response => response.text())
                             .then(content => {
-                                const lines = content.split('\n');
-
-                                // 处理第一行作为图片 HTML 标签
-                                const firstLine = lines[0].trim();
-                                if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
-                                    subtitlesDisplay.innerHTML = firstLine; // 显示图片
-                                    const subtitleContent = lines.slice(1).join('\n');
-                                    subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
-                                } else {
-                                    subtitles = parseTxt(content); // 解析txt格式的字幕
-                                } 
-                                // Display parsed subtitles and add click event listeners
-                                subtitlesDisplay.innerHTML += subtitles.map(sub => 
-                                    `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
-                                ).join('');
-                                addSubtitleClickListeners();
+                                const isFormattedSubtitle = /<p data-start="(\d+\.?\d*)" data-end="(\d+\.?\d*)">/.test(content);
+                                if (file.name.endsWith('.txt') && isFormattedSubtitle) {
+                                    const lines = content.split('\n');
+                                    // 处理第一行作为图片 HTML 标签
+                                    const firstLine = lines[0].trim();
+                                    if (firstLine.startsWith('<img') && firstLine.endsWith('>')) {
+                                        subtitlesDisplay.innerHTML = firstLine; // 显示图片
+                                        const subtitleContent = lines.slice(1).join('\n');
+                                        subtitles = parseTxt(subtitleContent); // 解析txt格式的字幕
+                                    } else {
+                                        subtitles = parseTxt(content); // 解析txt格式的字幕
+                                    } 
+                                    // Display parsed subtitles and add click event listeners
+                                    subtitlesDisplay.innerHTML += subtitles.map(sub => 
+                                        `<div id="subtitle-${sub.id}" class="subtitle" data-start="${sub.start}" style="margin-left: ${sub.marginLeft};">${sub.text.replace(/\n/g, '<br>')}</div>`
+                                    ).join('');
+                                    addSubtitleClickListeners();
+                                } else if (file.name.endsWith('.txt')) {
+                                    // 將普通txt文件內容直接顯示
+                                    subtitlesDisplay.textContent = content;
+                                }
+                                
                             });
 
                         // 播放音頻
