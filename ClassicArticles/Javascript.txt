@@ -1,0 +1,14 @@
+Part 1
+第一部分
+Warming up
+热身
+This part of the book will set the stage for your JavaScript ninja training.
+本书的这一部分将为您的 JavaScript 忍者训练奠定基础。
+In chapter 1, we’ll look at the current state of JavaScript and explore some of the environments in which JavaScript code can be executed.
+在第一章中，我们将了解 JavaScript 的现状，并探索一些可以执行 JavaScript 代码的环境。
+We’ll put a special focus on the environment where it all began—the browser—and we’ll discuss some of the best practices when developing JavaScript applications.
+我们将特别关注一切开始的环境——浏览器——并讨论开发 JavaScript 应用程序时的一些最佳实践。
+Because our exploration of JavaScript will be done in the context of browsers, in chapter 2 we’ll teach you about the lifecycle of client-side web applications and how executing JavaScript code fits into this lifecycle.
+由于我们对 JavaScript 的探索将在浏览器的背景下进行，在第二章中，我们将教您有关客户端 Web 应用程序的生命周期，以及执行 JavaScript 代码如何融入此生命周期。
+When you’re finished with this part of the book, you’ll be ready to embark on your training as a JavaScript ninja!
+当您完成本书的这一部分后，您将准备好开始您的 JavaScript 忍者训练！
