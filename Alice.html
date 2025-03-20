@@ -150,7 +150,7 @@
         }
 
 
-        #GrimmsButton,
+        #AlicesButton,
         #ClassicArticlesButton {
             font-size: 16px;
             border: none;
@@ -292,7 +292,7 @@
             </div>
             <div class="show-controls" id="Controls">
                 <button id="secondControl" style="display: none;"></button>
-                <button id="GrimmsButton" style="display: none;">Alice</button>
+                <button id="AlicesButton" style="display: none;">Alice</button>
                 <button id="ClassicArticlesButton" style="display: none;">Peter</button>
                 <button id="showButton" style="display: none;">Show Control</button>
                 
@@ -628,7 +628,7 @@
             
             document.getElementById('hiddenButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'none';
-            document.getElementById('GrimmsButton').style.display = 'none';
+            document.getElementById('AlicesButton').style.display = 'none';
             document.getElementById('ClassicArticlesButton').style.display = 'none';
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
@@ -659,7 +659,7 @@
             document.getElementById('showButton').style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
-            document.getElementById('GrimmsButton').style.display = 'block';
+            document.getElementById('AlicesButton').style.display = 'block';
             document.getElementById('ClassicArticlesButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
             //document.getElementById('progressContainer').style.display = 'flex';
@@ -669,21 +669,21 @@
         });
 
         document.getElementById('secondControl').addEventListener('click', function() {
-            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('GrimmsButton').style.display === 'none' && document.getElementById('ClassicArticlesButton').style.display === 'none') {
+            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('AlicesButton').style.display === 'none' && document.getElementById('ClassicArticlesButton').style.display === 'none') {
                 // 如果两个按钮都是隐藏的，则显示它们
                 document.getElementById('showButton').style.display = 'block';
-                document.getElementById('GrimmsButton').style.display = 'block';
+                document.getElementById('AlicesButton').style.display = 'block';
                 document.getElementById('ClassicArticlesButton').style.display = 'block';
             } else {
                 // 如果其中一个或两个按钮是显示的，则隐藏它们
                 document.getElementById('showButton').style.display = 'none';
-                document.getElementById('GrimmsButton').style.display = 'none';
+                document.getElementById('AlicesButton').style.display = 'none';
                 document.getElementById('ClassicArticlesButton').style.display = 'none';
             }
         });
 
 
-        document.getElementById('GrimmsButton').addEventListener('click', function() {
+        document.getElementById('AlicesButton').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
             // 停止播放
             audioPlayer.pause();
@@ -694,16 +694,16 @@
             // 章節對應的音頻和字幕URL
             const chapters = {
                 1: {
-                    textUrl: 'Grimms/001 Der Froschkoenig oder der eiserne Heinrich.txt',
-                    audioUrl: 'Grimms/001 Der Froschkoenig oder der eiserne Heinrich.mp3'
+                    textUrl: 'Alice/chapter1.txt',
+                    audioUrl: 'Alice/chapter1.mp3'
                 },
                 2: {
-                    textUrl: 'Grimms/002 Katze und Maus in Gesellschaft.txt',
-                    audioUrl: 'Grimms/002 Katze und Maus in Gesellschaft.mp3'
+                    textUrl: 'Alice/chapter2.txt',
+                    audioUrl: 'Alice/chapter2.mp3'
                 },
                 3: {
-                    textUrl: 'Grimms/003 Marienkind.txt',
-                    audioUrl: 'Grimms/003 Marienkind.mp3'
+                    textUrl: 'Alice/chapter3.txt',
+                    audioUrl: 'Alice/chapter3.mp3'
                 }
             };
 
@@ -763,20 +763,20 @@
             // 章節對應的音頻和字幕URL
             const chapters = {
                 1: {
-                    textUrl: 'ClassicArticles/I Have a Dream by Martin Luther King Jr.txt',
-                    audioUrl: 'ClassicArticles/I Have a Dream by Martin Luther King Jr.mp3'
+                    textUrl: '',
+                    audioUrl: ''
                 },
                 2: {
-                    textUrl: 'ClassicArticles/Hemingway the old man and the see.txt',
-                    audioUrl: 'https://ia801203.us.archive.org/27/items/the-old-man-and-the-sea-audio-book-narrated-by-charlton-heston_202312/The%20Old%20Man%20and%20the%20Sea%20-%20Audio%20Book%20-%20Narrated%20by%20Charlton%20Heston.mp3'
+                    textUrl: '',
+                    audioUrl: ''
                 },
                 3: {
-                    textUrl: 'ClassicArticles/Alice.txt',
-                    audioUrl: 'ClassicArticles/Alice.mp3'
+                    textUrl: '',
+                    audioUrl: ''
                 },
                 4: {
-                    textUrl: 'ClassicArticles/Javascript.txt',
-                    audioUrl: 'ClassicArticles/Javascript.mp3'
+                    textUrl: '',
+                    audioUrl: ''
                 }
             };
 
@@ -889,7 +889,7 @@
             document.getElementById('hiddenButton').style.display = 'none';
             showControlsButton.style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
-            document.getElementById('GrimmsButton').style.display = 'block';
+            document.getElementById('AlicesButton').style.display = 'block';
             document.getElementById('ClassicArticlesButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
         }
