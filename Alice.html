@@ -151,7 +151,7 @@
 
 
         #AlicesButton,
-        #ClassicArticlesButton {
+        #Peter {
             font-size: 16px;
             border: none;
             background-color: #e4e7fe;
@@ -293,7 +293,7 @@
             <div class="show-controls" id="Controls">
                 <button id="secondControl" style="display: none;"></button>
                 <button id="AlicesButton" style="display: none;">Alice</button>
-                <button id="ClassicArticlesButton" style="display: none;">Peter</button>
+                <button id="Peter" style="display: none;">Peter</button>
                 <button id="showButton" style="display: none;">Show Control</button>
                 
             </div>
@@ -629,7 +629,7 @@
             document.getElementById('hiddenButton').style.display = 'block';
             document.getElementById('secondControl').style.display = 'none';
             document.getElementById('AlicesButton').style.display = 'none';
-            document.getElementById('ClassicArticlesButton').style.display = 'none';
+            document.getElementById('Peter').style.display = 'none';
             document.getElementById('showButton').style.display = 'none';
             //document.getElementById('playcontrolButton').style.display = 'none';
             document.getElementById('progressContainer').style.display = 'none';
@@ -660,7 +660,7 @@
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('hiddenButton').style.display = 'none';
             document.getElementById('AlicesButton').style.display = 'block';
-            document.getElementById('ClassicArticlesButton').style.display = 'block';
+            document.getElementById('Peter').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
             //document.getElementById('progressContainer').style.display = 'flex';
 
@@ -669,16 +669,16 @@
         });
 
         document.getElementById('secondControl').addEventListener('click', function() {
-            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('AlicesButton').style.display === 'none' && document.getElementById('ClassicArticlesButton').style.display === 'none') {
+            if (document.getElementById('showButton').style.display === 'none' && document.getElementById('AlicesButton').style.display === 'none' && document.getElementById('Peter').style.display === 'none') {
                 // 如果两个按钮都是隐藏的，则显示它们
                 document.getElementById('showButton').style.display = 'block';
                 document.getElementById('AlicesButton').style.display = 'block';
-                document.getElementById('ClassicArticlesButton').style.display = 'block';
+                document.getElementById('Peter').style.display = 'block';
             } else {
                 // 如果其中一个或两个按钮是显示的，则隐藏它们
                 document.getElementById('showButton').style.display = 'none';
                 document.getElementById('AlicesButton').style.display = 'none';
-                document.getElementById('ClassicArticlesButton').style.display = 'none';
+                document.getElementById('Peter').style.display = 'none';
             }
         });
 
@@ -788,7 +788,7 @@
 
 
 
-        document.getElementById('ClassicArticlesButton').addEventListener('click', function() {
+        document.getElementById('Peter').addEventListener('click', function() {
             document.getElementById('progressContainer').style.display = 'none';
             // 停止播放
             audioPlayer.pause();
@@ -926,7 +926,7 @@
             showControlsButton.style.display = 'block';
             //document.getElementById('playcontrolButton').style.display = 'block';
             document.getElementById('AlicesButton').style.display = 'block';
-            document.getElementById('ClassicArticlesButton').style.display = 'block';
+            document.getElementById('Peter').style.display = 'block';
             document.getElementById('secondControl').style.display = 'block';
         }
 
